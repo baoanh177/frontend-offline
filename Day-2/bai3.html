@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- CSS -->
+    <style>
+        .container {
+            width: 45%;
+        }
+
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            row-gap: 20px;
+            width: 70%;
+        }
+
+        input {
+            width: 220px;
+        }
+
+        textarea {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Get in touch with us by filling contact form below</h1>
+        <form action="">
+            <input type="text" placeholder="* Enter your full name" required>
+            <input type="email" placeholder="* Enter your email address" required>
+            <input type="text" placeholder="* Enter your subject" required>
+            <textarea name="" id="" cols="30" rows="10" placeholder="* Your message here"></textarea>
+            <div class="row">
+                <button type="submit">Send message</button>
+                <span class="form-message">* Please fill all require form feild, thanks!</span>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

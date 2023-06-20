@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- CSS -->
+    <style>
+        .container {
+            width: 40%;
+        }
+
+        p {
+            width: 70%;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px 30px;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        label span {
+            font-weight: normal;
+            color: #999;
+        }
+
+        input, select, button {
+            height: 40px;
+            padding: 10px 5px;
+            box-sizing: border-box;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        button {
+            margin-top: 5px;
+            width: 200px;
+            background-color: #08768d;
+            border: none;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Try a tree sample</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam itaque fugiat error distinctio quae autem
+            laboriosam sint in explicabo rem? Id cumque, consequuntur vero, ducimus aliquam quam voluptatum incidunt
+            dolor
+            quasi error distinctio non fugit impedit assumenda consequatur laboriosam magnam at unde quae quia quisquam
+            hic?
+            Recusandae sint laborum nam?</p>
+
+        <form action="">
+            <div class="form-group">
+                <label for="first-name">First name</label>
+                <input type="text" name="first-name" placeholder="John" required>
+            </div>
+            <div class="form-group">
+                <label for="last-name">Last name</label>
+                <input type="text" name="last-name" placeholder="Smith" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" name="email" placeholder="john@example.com" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" name="address" placeholder="Silk St" required>
+            </div>
+            <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" name="city" placeholder="London" required>
+            </div>
+            <div class="form-group">
+                <label for="state">State <span>(optional)</span></label>
+                <input type="text" name="state">
+            </div>
+            <div class="form-group">
+                <label for="zip-code">ZIP code</label>
+                <input type="text" name="zip-code" placeholder="EC2Y 8DS" required>
+            </div>
+            <div class="form-group">
+                <label for="country">Country</label>
+                <select name="country" id="">
+                    <option value="1">United Kingdom</option>
+                    <option value="2">VietNam</option>
+                    <option value="3">Germany</option>
+                </select>
+            </div>
+            <button>SEND ME FREE COFFEE</button>
+        </form>
+    </div>
+</body>
+
+</html>
