@@ -1,0 +1,43 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 90%;
+}
+
+form {
+    margin: 20px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+}
+
+label {
+    width: 100px;
+}
+
+input:not([type=radio]):not([type=checkbox]) {
+    width: 200px;
+    height: 20px;
+}
+
+.form-btns {
+    width: 150px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.submit-btn, .reset-btn {
+    padding: 0 5px;
+}

@@ -1,0 +1,45 @@
+.call-to-action {
+    font-family: 'roboto';
+    margin: 40px auto;
+    text-align: center;
+}
+
+.param {
+    display: inline-block;
+    background-color: #8498cb;
+    color: #fff;
+    padding: 10px 40px;
+}
+
+.title {
+    font-weight: normal;
+}
+
+.title strong {
+    color: #0cabe2;
+}
+
+.subtitle {
+    color: #555;
+}
+
+.btns {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btns a {
+    padding: 12px;
+    min-width: 130px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btns a:hover {
+    opacity: 0.8;
+}

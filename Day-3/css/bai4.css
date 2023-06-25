@@ -1,0 +1,74 @@
+ul {
+    list-style: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'roboto';
+}
+
+.contact-map {
+    margin: 30px;
+}
+
+nav {
+    display: inline-block;
+    border: 2px solid goldenrod;
+}
+
+nav ul {
+    display: flex;
+    color: goldenrod;
+}
+
+nav ul li {
+    padding: 10px 20px;
+    transition: all 0.2s linear;
+    cursor: pointer;
+}
+
+nav ul li:not(.active):hover {
+    background-color: rgb(245, 219, 152);
+    color: #fff;
+}
+
+.active {
+    background-color: goldenrod;
+    color: #fff;
+}
+
+/* Content */
+.content {
+    display: grid;
+    grid-template-columns: 35% 1fr;
+    margin-top: 30px;
+    background-color: #eee;
+}
+
+iframe {
+    width: 100%;
+    height: 400px;
+}
+
+.title {
+    font-size: 25px;
+}
+
+.contact-info {
+    padding: 50px 30px 0;
+}
+
+.contact-address {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    color: #666;
+    gap: 2px;
+}
+
+.contact-address span > span {
+    color: goldenrod;
+    text-decoration: underline;
+    cursor: pointer;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="./css/bai1.css">
+
+    <!-- Link icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <section class="contact">
+        <h1 class="contact__title">CONTACT US</h1>
+        <div class="contact__content">
+            <article class="info">
+                <h2 class="info__title">Contact Info</h2>
+                <div class="info__items">
+                    <div class="item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>321 Awesome Street New York, NY 17022</span>
+                    </div>
+                    <div class="item">
+                        <i class="fa-regular fa-envelope"></i>
+                        <span>info@companyname.com</span>
+                    </div>
+                    <div class="item">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+1 800 123 1234</span>
+                    </div>
+                </div>
+            </article>
+            <article class="form-block">
+                <h2 class="form-block__title">Having Any Query! Or Book an appointment</h2>
+                <form action="https://api-gateway.fullstack.edu.vn/action_page.php" id="contact__form" method="post">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="text" name="subject" placeholder="Subject">
+                    <textarea name="message" id="" cols="30" rows="7" placeholder="Message"></textarea>
+                    <button class="submit-btn" type="submit">Send Message</button>
+                </form>
+            </article>
+        </div>
+    </section>
+</body>
+
+</html>
