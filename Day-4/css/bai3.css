@@ -47,6 +47,7 @@ ul {
 
 .title {
     font-size: 40px;
+    line-height: 0;
 }
 
 nav ul {
