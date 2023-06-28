@@ -1,0 +1,45 @@
+.container {
+    width: 500px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.reservation-form {
+    display: grid;
+    grid-template-columns: 220px 220px;
+    justify-content: center;
+    gap: 15px;
+}
+
+.title {
+    font-weight: bolder;
+    font-size: 40px;
+    font-family: 'Alfa Slab One';
+}
+
+.subtitle {
+    font-size: 20px;
+}
+
+.subtitle, input::placeholder {
+    font-family: "Bebas Neue";
+}
+
+input {
+    height: 35px;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+input::placeholder {
+    color: #000;
+    font-weight: bold;
+}
+
+button {
+    border-radius: 4px;
+    font-weight: bold;
+    background-color: #b0322a;
+    color: #fff;
+    font-family: 'Alfa Slab One';
+}

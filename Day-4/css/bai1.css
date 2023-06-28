@@ -1,0 +1,67 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    margin: 50px auto;
+    display: block;
+    background-color: #334455;
+    border-radius: 8px;
+    font-family: 'roboto';
+    padding: 20px;
+    box-sizing: border-box;
+    width: 900px;
+}
+
+.title {
+    color: #fff;
+}
+
+.title strong {
+    color: goldenrod;
+}
+
+.subtitle {
+    display: block;
+    margin-top: 10px;
+    width: 500px;
+    color: #fff;
+}
+
+.subscribe-form {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+input, button {
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    transition: all 0.2s linear;
+}
+
+input {
+    min-width: 260px;
+    height: 30px;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+
+button {
+    min-width: 160px;
+}
+
+.container:hover input::placeholder {
+    color: goldenrod;
+}
+
+.container:hover input {
+    background-color: #ddd;
+}
+
+.container:hover button {
+    background-color: goldenrod;
+    color: #fff;
+}
