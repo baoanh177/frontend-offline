@@ -1,0 +1,151 @@
+.title {
+    font-family: "Lobster";
+    font-size: 40px;
+}
+
+* {
+    font-family: "lato";
+}
+
+strong {
+    color: red;
+}
+
+.subtitle {
+    width: 500px;
+    color: #999;
+}
+
+
+.form-group {
+    position: relative;
+    margin-top: 20px;
+    width: 440px;
+    justify-content: flex-end;
+    display: flex;
+    align-items: center;
+
+}
+
+.icon {
+    position: absolute;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background-color: #ccc;
+}
+
+input {
+    width: 400px;
+    height: 40px;
+    display: block;
+    outline: none;
+    border: none;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+}
+
+input::placeholder {
+    color: #ccc;
+}
+
+input:focus ~ .icon {
+    background-color: black;
+}
+
+input:focus {
+    border-color: #000;
+}
+
+input:focus ~ .ins-icons i {
+    display: none;
+}
+
+input:focus ~ .ins-icons i ~ i {
+    display: block;
+}
+
+.ins-icons {
+    position: absolute;
+    font-size: 10px;
+    right: 2em;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.ins-icons {
+    color: #ccc;
+}
+
+.ins-icons i ~ i {
+    display: none;
+}
+
+textarea {
+    width: 400px;
+    height: 150px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+textarea::placeholder {
+    color: #ccc;
+}
+
+textarea:focus ~ .icon {
+    background-color: #000;
+}
+
+textarea:focus ~ .ins-icons i {
+    display: none;
+}
+
+textarea:focus ~ .ins-icons i ~ i {
+    display: block;
+}
+
+.form-group:nth-child(5) .icon {
+    display: block;
+    padding-top: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    height: 150px;
+}
+
+.form-group:nth-child(5) .ins-icons {
+    top: 2em;
+    right: 2em;
+}
+
+.row {
+    width: 440px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cb {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #777;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+}
+
+button {
+    color: #fff;
+    background-color: red;
+    border: none;
+    padding: 7px 25px;
+}
