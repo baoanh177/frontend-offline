@@ -1,0 +1,181 @@
+body {
+    font-family: "Nunito";
+    background-image: url(http://uiwebsoft.com/justlog/login-one/images/login-bg2.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+.container {
+    position: fixed;
+    display: flex;
+    left: 50%;
+    top: 50%;
+    width: 45%;
+    transform: translate(-50%, -50%);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+    width: 40%;
+    background-color: #ff574d;
+    padding: 20px;
+    box-sizing: border-box;
+    color: #fff;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: bold;
+    color: #ff574d;
+    width: 35px;
+    height: 35px;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+.heading {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.content a {
+    color: #ff574d;
+    background-color: #fff;
+    display: block;
+    padding: 8px 20px;
+    text-decoration: none;
+}
+
+.socials {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    background-color: #66666620;
+}
+
+.slide-btn {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    background-color: #fff;
+    color: #ff574d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    right: 0;
+    top: 50%;
+    transform: translate(50%, -50%);
+    box-shadow: 1px 1px 4px 1px #ccc;
+}
+
+.form-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    padding: 40px 30px 60px;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #fff;
+}
+
+.title, .title strong {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.title {
+    position: relative;
+}
+
+.title strong {
+    color: #ff574d;
+}
+
+.title::before {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: #ff574d;
+    bottom: -0.4em;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+form {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+input:not([type="checkbox"]) {
+    height: 35px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.submit-btn {
+    margin-top: 20px;
+    height: 35px;
+    background-color: #ff574d;
+    color: #fff;
+    border: none;
+}
+
+.footer {
+    margin-top: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+a:hover {
+    text-decoration: underline;
+}
