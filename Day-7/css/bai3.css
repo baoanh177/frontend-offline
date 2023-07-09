@@ -1,0 +1,93 @@
+.container {
+    width: 1200px;
+    margin: 20px auto;
+    font-family: "Asap";
+    font-size: 62.5%;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+nav {
+    margin: 20px 0;
+}
+
+nav ul {
+    display: flex;
+    gap: 15px;
+}
+
+nav li {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 50px;
+    width: 110px;
+    padding: 0 10px;
+    border-radius: 99px;
+    background-color: #eee;
+    cursor: pointer;
+}
+
+nav li:hover:not(.active) {
+    background-color: rgb(230, 200, 123);
+}
+
+.list-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.list-item li {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.list-item li img {
+    width: 100%;
+    height: 220px;
+    transition: all 0.4s linear;
+
+}
+
+.list-item li:hover img {
+    scale: 1.07;
+}
+
+.list-item li .info {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #fff;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+.list-item span {
+    font-size: 13px;
+}
+
+.active {
+    background-color: goldenrod;
+    color: #fff;
+}
