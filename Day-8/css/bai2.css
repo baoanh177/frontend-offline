@@ -1,0 +1,195 @@
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+::-webkit-scrollbar {
+    width: 0;
+}
+html {
+    scroll-behavior: smooth;
+    background-color: #fefefe;
+}
+body {
+    width: 100%;
+    min-height: 100vh;
+    padding: 40px;
+    font-family: Nunito;
+    background-color: #bbb;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-weight: 500;
+    margin: 20px 0;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+ul,
+ol,
+li {
+    list-style: none;
+}
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cart {
+    width: 400px;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.heading {
+    display: flex;
+    background-color: #ddd;
+    padding: 0 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.heading i {
+    font-size: 20px;
+}
+
+h2 {
+    position: relative;
+}
+
+h2::after {
+    top: 0;
+    right: -20px;
+    position: absolute;
+    content: "4";
+    display: block;
+    background-color: blue;
+    color: #fff;
+    font-size: 14px;
+    padding: 0px 5px;
+    border-radius: 50%;
+}
+
+.list-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.item {
+    display: flex;
+    padding: 30px 20px;
+    align-items: center;
+    gap: 30px;
+    background-color: #eee;
+}
+
+.item img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+}
+
+.name {
+    color: #666;
+}
+
+.row {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.row span {
+    font-weight: bold;
+}
+
+.num {
+    padding: 3px 10px;
+    border: 1px solid #aaa;
+    border-radius: 99px;
+    word-spacing: 10px;
+    color: #aaa;
+}
+
+.item:not(:first-child) {
+    border-top: 1px solid #ccc;
+}
+
+.actions {
+    padding: 30px 20px 20px;
+}
+
+.actions .row strong {
+    font-size: 20px;
+}
+
+.actions .row span {
+    font-weight: normal;
+    color: #f00;
+}
+
+.row + span {
+    font-size: 12px;
+    color: #aaa;
+}
+
+.btns {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    margin-top: 20px;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.btns :first-child {
+    border: 1px solid #aaa;
+    color: #aaa;
+}
+
+.btns :last-child {
+    background-color: rgb(55, 55, 255);
+    color: #fff;
+}
+
+.foot {
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.foot i {
+    padding: 14px 12px;
+    border-radius: 50%;
+    border: 2px solid blue;
+}
