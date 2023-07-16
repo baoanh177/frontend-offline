@@ -1,0 +1,93 @@
+.container {
+    width: 1120px;
+    margin: 40px auto;
+    font-family: Arial;
+}
+
+.list-item {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.item {
+    position: relative;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #ccc;
+    background-image: url(https://images.unsplash.com/photo-1682306002010-c4dbcbef02f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1172&q=80);
+    background-position: center center;
+}
+
+.content {
+    height: calc(100% - 30px);
+    width: calc(100% - 30px);
+    background-color: #fff;
+    border: 2px solid #fff;
+    outline: 17px solid #fff;
+    box-sizing: border-box;
+    padding: 20px;
+    transition: all 0.3s linear;
+}
+
+img {
+    position: relative;
+    width: 60px;
+    transition: width 0.2s ease-in;
+}
+
+h2 {
+    line-height: 1.4;
+    margin: 0;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.link i {
+    padding: 5px;
+    border: 1px solid #eee;
+    border-radius: 50%;
+}
+
+a {
+    position: absolute;
+    text-decoration: none;
+    bottom: -30px;
+    left: 40px;
+    color: #fff;
+    transition: bottom 0.3s linear;
+    opacity: 0;
+}
+
+.item:hover > .content img {
+    width: 0;
+    opacity: 0;
+    top: -40px;
+}
+
+.item:hover {
+    color: #fff;
+}
+
+.item:hover a {
+    bottom: 40px;
+    opacity: 1;
+}
+
+a i:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.item:hover .content {
+    background-color: #cd91869e;
+    border: 2px solid #ccc;
+    outline: 15px solid #cd91869e;
+}
