@@ -1,0 +1,109 @@
+body {
+    background-color: #eee;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 1000px;
+    margin: 200px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: green;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+}
+
+.menu li {
+    background-color: #fff;
+    padding: 5px;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.menu li:last-child {
+    border-right: none;
+}
+
+.menu label {
+    display: block;
+    padding: 10px;
+}
+
+.hihi {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    perspective: 1000px;
+}
+
+.content {
+    position: absolute;
+    transform-origin: top;
+    top: 0;
+    overflow-x: scroll;
+    background-color: #fff;
+    padding: 20px;
+    transition-property: opacity;
+    transition-property: rotateX;
+    transition: 0.3s cubic-bezier(0 , 0.4, 0.4, 0.2);
+    transform: rotateX(-60deg);
+    opacity: 0.1;
+}
+
+.inner {
+    width: 105%;
+}
+
+.content p {
+    line-height: 1.4;
+}
+
+#tab-1:checked ~ .hihi .content:nth-of-type(1) {
+    transform: rotateX(0deg);
+    opacity: 1;
+    z-index: 1;
+}
+#tab-2:checked ~ .hihi .content:nth-of-type(2) {
+    transform: rotateX(0deg);
+    opacity: 1;
+    z-index: 1;
+}
+#tab-3:checked ~ .hihi .content:nth-of-type(3) {
+    transform: rotateX(0deg);
+    opacity: 1;
+    z-index: 1;
+}
+#tab-4:checked ~ .hihi .content:nth-of-type(4) {
+    transform: rotateX(0deg);
+    opacity: 1;
+    z-index: 1;
+}
+
+#tab-1:checked ~ nav li:nth-of-type(1) label {
+    background-color: #31A8F7;
+}
+#tab-2:checked ~ nav li:nth-of-type(2) label {
+    background-color: #31A8F7;
+}
+#tab-3:checked ~ nav li:nth-of-type(3) label {
+    background-color: #31A8F7;
+}
+#tab-4:checked ~ nav li:nth-of-type(4) label {
+    background-color: #31A8F7;
+}

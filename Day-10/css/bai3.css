@@ -1,0 +1,131 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #323543;
+}
+
+.main, .haha {
+  position: relative;
+  padding-top: 30px;
+  top: 400px;
+  width: 140px;
+  height: 160px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.main {
+  position: absolute;
+  z-index: 99;
+}
+
+.mail {
+  position: absolute;
+  border-top: 40px solid transparent;
+  border-bottom: 40px solid rgb(255, 84, 84);
+  border-right: 70px solid rgb(255, 84, 84);
+  border-left: 70px solid rgb(244, 45, 45);
+  width: 0;
+  clip-path: polygon(0 0, 50% 50%, 100% 0, 100% 100%, 0 100%, 0 0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.background {
+  width: 140px;
+  height: 80px;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-color: rgb(208, 39, 39);
+  transition: transform 0.3s ease-in-out;
+}
+
+.inner {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  transform: translate(-50%, 0);
+  width: 120px;
+  height: 0px;
+  background-color: #fff;
+  transition: z-index 0s .5s;
+  transition: height .5s cubic-bezier(0, 0.4, 0.9, 0);
+}
+
+.row {
+  display: flex;
+  justify-content: space-around;
+}
+
+.background::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 140px;
+  height: 40px;
+  background-color: rgb(208, 39, 39);
+  top: 0;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  transition: z-index 1s 1s;
+  transition: transform .6s linear .4s;
+  transform-origin: top;
+}
+
+.hihi {
+  width: 8px;
+  height: 8px;
+  transform: skewX(-45deg);
+  background-color: rgb(239, 62, 62);
+}
+
+.mail-title, .mail-content {
+  margin-top: 8px;
+  height: 8px;
+  margin-left: 5px;
+  background-color: rgb(239, 62, 62);
+}
+
+.mail-title {
+  width: 40px;
+}
+
+.mail-content {
+  width: 25px;
+}
+
+.main:hover ~ .haha .background::before {
+  transform: rotateX(180deg);
+  transition: z-index 0s 1s;
+  transition: transform .6s linear;
+}
+
+.main:hover .mail {
+  transform: translateY(30px);
+}
+
+.main:hover ~ .haha .background {
+  transform: translate(-50%, 30px);
+}
+
+.main:hover ~ .haha .inner {
+  height: 100px;
+  transition: height .4s linear .7s;
+  opacity: 1;
+  z-index: 4;
+}
+
+.haha::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 100%;
+  width: 140px;
+  height: 10px;
+  background: radial-gradient(#000 10%, #333);
+  filter: blur(4px);
+  border-radius: 50%;
+}
