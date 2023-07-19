@@ -21,6 +21,7 @@ body {
 .main {
   position: absolute;
   z-index: 99;
+  cursor: pointer;
 }
 
 .mail {

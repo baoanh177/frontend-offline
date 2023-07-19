@@ -57,6 +57,7 @@ h1 {
     left: 10px;
     font-size: 24px;
     z-index: 3;
+    cursor: pointer;
 }
 
 .menu::after {

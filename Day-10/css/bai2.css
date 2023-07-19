@@ -36,6 +36,11 @@ body {
     border-bottom: 1px solid #ccc;
 }
 
+.menu li:hover label {
+    background-color: #31A8F7;
+    cursor: pointer;
+}
+
 .menu li:last-child {
     border-right: none;
 }
