@@ -448,6 +448,12 @@ a {
     border: none;
     color: #fff;
     font-family: var(--title-font);
+    transition: 0.5s ease background-color;
+    cursor: pointer;
+}
+
+.book .submit-btn:hover {
+    background-color: #ffc045;
 }
 
 /* Fopter */
