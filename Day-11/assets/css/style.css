@@ -163,6 +163,10 @@ a {
     position: relative;
 }
 
+.banner figure img {
+    max-width: 100%;
+}
+
 .banner figcaption {
     position: absolute;
     left: 25px;
@@ -626,6 +630,14 @@ footer .row:last-child i {
 
     .book input, .book .submit-btn {
         width: 100%;
+    }
+
+    .banner .heading h1 {
+        font-size: 7rem;
+    }
+
+    .banner .heading h1 span {
+        font-size: 5rem;
     }
 }
 
