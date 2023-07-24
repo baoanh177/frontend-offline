@@ -625,6 +625,10 @@ footer .row:last-child i {
     .col-7 {
         width: 100%;
     }
+
+    .banner {
+        padding: 80px 20px;
+    }
 }
 
 @media screen and (max-width: 778px) {
@@ -638,16 +642,24 @@ footer .row:last-child i {
     }
 
     .banner .heading h1 {
-        font-size: 7rem;
+        font-size: 6.5rem;
     }
 
     .banner .heading h1 span {
         font-size: 5rem;
+    }
+
+    .banner {
+        padding: 60px 20px;
     }
 }
 
 @media screen and (max-width: 470px) {
     .products .list-item {
         grid-template-columns: 100%;
+    }
+
+    .banner {
+        padding: 30px 20px;
     }
 }
