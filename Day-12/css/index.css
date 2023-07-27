@@ -1,0 +1,550 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, body .main .flex .form .login-form > .content blockquote.other-login::after, blockquote:after,
+q:before,
+body .main .flex .form .login-form > .content q.other-login::after, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body .main .flex .form .register-form, body .main .flex .form .login-form {
+  position: relative;
+  border-radius: 12px;
+  transition: all 0.6s ease-in-out 0s;
+  background-color: #fff;
+  padding: 64px;
+  box-shadow: 0 0 60px 0 rgba(94, 92, 154, 0.12);
+  opacity: 1;
+  visibility: visible;
+}
+
+body .main .flex .form .register-form > .content h2, body .main .flex .form .login-form > .content h2 {
+  font-size: 2.6rem;
+  line-height: 1em;
+  font-weight: 700;
+  color: #3e3f5e;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Rajdhani", sans-serif;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+body .second-bg {
+  position: absolute;
+  top: -20%;
+  right: -32%;
+  width: 64%;
+  height: 140%;
+  border-radius: 50%;
+  pointer-events: none;
+  background: url(https://hoanganf8.github.io/htmlcss_project02/image/dot-texture.png) repeat 0 0 #fff;
+}
+body .main {
+  background-image: url(https://hoanganf8.github.io/htmlcss_project02/image/landing-background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 center;
+  height: 100vh;
+}
+body .main .flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  max-width: 1136px;
+  margin: 0 auto;
+}
+body .main .flex #login:checked ~ .content .tabs .login-tab {
+  background-color: #fff;
+  color: #3e3f5e;
+}
+body .main .flex #login:checked ~ .form .register-form {
+  transform: translate(50%, -50%);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
+}
+body .main .flex #register:checked ~ .content .tabs .register-tab {
+  background-color: #fff;
+  color: #3e3f5e;
+}
+body .main .flex #register:checked ~ .form .login-form {
+  transform: translateX(50%);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
+}
+body .main .flex > .content {
+  width: 584px;
+  text-align: center;
+  color: #fff;
+  padding-bottom: 40px;
+}
+body .main .flex > .content .heading {
+  text-transform: uppercase;
+}
+body .main .flex > .content .heading span {
+  display: block;
+  margin-top: 36px;
+  font-size: 2.4rem;
+  font-weight: 500;
+  line-height: 1em;
+}
+body .main .flex > .content .heading h1 {
+  margin-top: -10px;
+  font-size: 10.4rem;
+  line-height: 1em;
+  padding-bottom: 10px;
+  font-family: "Titillium Web", sans-serif;
+}
+body .main .flex > .content .desc {
+  font-size: 1.8rem;
+  line-height: 24px;
+  font-weight: 500;
+  margin: 30px 100px 0;
+}
+body .main .flex > .content .tabs {
+  display: flex;
+  justify-content: center;
+  margin: 90px auto 0;
+  width: 360px;
+  max-width: 94vw;
+}
+body .main .flex > .content .tabs label {
+  font-weight: 700;
+  height: 54px;
+  width: 100%;
+  border-radius: 12px 0 0 12px;
+  border: 1px solid #fff;
+  font-size: 1.6rem;
+  text-align: center;
+  line-height: 54px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+body .main .flex > .content .tabs .register-tab {
+  border-radius: 0 12px 12px 0;
+}
+body .main .flex .form {
+  position: relative;
+  font-family: "Rajdhani", sans-serif;
+  width: 484px;
+}
+body .main .flex .form .login-form > .rocket {
+  position: absolute;
+  top: 9px;
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+body .main .flex .form .login-form > .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+body .main .flex .form .login-form > .content form {
+  margin-top: 76px;
+  width: 100%;
+}
+body .main .flex .form .login-form > .content form .form-input {
+  position: relative;
+  width: 100%;
+  font-size: 1.6rem;
+  line-height: 24px;
+}
+body .main .flex .form .login-form > .content form .form-input + .form-input {
+  margin-top: 28px;
+}
+body .main .flex .form .login-form > .content form .form-input label {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.3s ease-in-out;
+  color: #adafca;
+  font-weight: 600;
+  padding: 0 5px;
+  background-color: #fff;
+  pointer-events: none;
+}
+body .main .flex .form .login-form > .content form .form-input input {
+  width: 100%;
+  padding: 0 18px;
+  height: 54px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  outline: none;
+  transition: border 0.3s ease-in-out;
+}
+body .main .flex .form .login-form > .content form .form-input input:focus {
+  border: 1px solid blue;
+}
+body .main .flex .form .login-form > .content form .form-input input:focus + label {
+  top: 0;
+  font-size: 1rem;
+}
+body .main .flex .form .login-form > .content form .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.4rem;
+  line-height: 22px;
+  font-weight: 700;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+body .main .flex .form .login-form > .content form .row .remember #remember:checked + label .check-config {
+  background-color: #23d2e2;
+}
+body .main .flex .form .login-form > .content form .row .remember > label {
+  display: flex;
+  gap: 12px;
+  user-select: none;
+  cursor: pointer;
+}
+body .main .flex .form .login-form > .content form .row .remember > label .check-config {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  transition: background-color 0.2s ease-in-out;
+}
+body .main .flex .form .login-form > .content form .row .forgot-password {
+  color: #adafca;
+  cursor: pointer;
+}
+body .main .flex .form .login-form > .content form .row .forgot-password:hover {
+  color: #00c7d9;
+}
+body .main .flex .form .login-form > .content form button {
+  width: 100%;
+  color: #fff;
+  outline: none;
+  border: none;
+  height: 54px;
+  line-height: 54px;
+  border-radius: 10px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-align: center;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  font-family: "Rajdhani", sans-serif;
+  margin-top: 30px;
+  background-color: #615dfa;
+  box-shadow: 4px 7px 12px 0 rgba(97, 93, 250, 0.2);
+}
+body .main .flex .form .login-form > .content form button:hover {
+  background-color: #5753e4;
+  cursor: pointer;
+}
+body .main .flex .form .login-form > .content .other-login {
+  margin-top: 40px;
+  position: relative;
+  font-size: 14px;
+  line-height: 1em;
+  font-weight: 700;
+  padding: 0 15px;
+}
+body .main .flex .form .login-form > .content .other-login::before, body .main .flex .form .login-form > .content .other-login::after {
+  display: block;
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0.5px;
+  top: 50%;
+  right: 100%;
+  background-color: #ddd;
+}
+body .main .flex .form .login-form > .content .other-login::after {
+  right: auto;
+  left: 100%;
+}
+body .main .flex .form .login-form > .content .socials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 30px;
+}
+body .main .flex .form .login-form > .content .socials > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: lightcoral;
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+}
+body .main .flex .form .login-form > .content .socials > div:hover {
+  transform: translateY(-5px);
+}
+body .main .flex .form .login-form > .content .socials > div img {
+  width: 12px;
+}
+body .main .flex .form .login-form > .content .socials .facebook {
+  background-color: #3763d2;
+}
+body .main .flex .form .login-form > .content .socials .twitter {
+  background-color: #1abcff;
+}
+body .main .flex .form .login-form > .content .socials .twitch {
+  background-color: #7b5dfa;
+}
+body .main .flex .form .login-form > .content .socials .youtube {
+  background-color: #fd434f;
+}
+body .main .flex .form .register-form {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+body .main .flex .form .register-form > .rocket {
+  position: absolute;
+  top: 65px;
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+body .main .flex .form .register-form > .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+body .main .flex .form .register-form > .content form {
+  margin-top: 76px;
+  width: 100%;
+}
+body .main .flex .form .register-form > .content form .form-input {
+  position: relative;
+  width: 100%;
+  font-size: 1.6rem;
+  line-height: 24px;
+}
+body .main .flex .form .register-form > .content form .form-input + .form-input {
+  margin-top: 28px;
+}
+body .main .flex .form .register-form > .content form .form-input label {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.3s ease-in-out;
+  color: #adafca;
+  font-weight: 600;
+  padding: 0 5px;
+  background-color: #fff;
+  pointer-events: none;
+}
+body .main .flex .form .register-form > .content form .form-input input {
+  width: 100%;
+  padding: 0 18px;
+  height: 54px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  outline: none;
+  transition: border 0.3s ease-in-out;
+}
+body .main .flex .form .register-form > .content form .form-input input:focus {
+  border: 1px solid blue;
+}
+body .main .flex .form .register-form > .content form .form-input input:focus + label {
+  top: 0;
+  font-size: 1rem;
+}
+body .main .flex .form .register-form > .content form .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.4rem;
+  line-height: 22px;
+  font-weight: 700;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+body .main .flex .form .register-form > .content form .row .subscribe #subscribe:checked + label .check-config {
+  background-color: #23d2e2;
+}
+body .main .flex .form .register-form > .content form .row .subscribe > label {
+  display: flex;
+  gap: 12px;
+  user-select: none;
+  cursor: pointer;
+}
+body .main .flex .form .register-form > .content form .row .subscribe > label .check-config {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  transition: background-color 0.2s ease-in-out;
+}
+body .main .flex .form .register-form > .content form button {
+  width: 100%;
+  color: #fff;
+  outline: none;
+  border: none;
+  height: 54px;
+  line-height: 54px;
+  border-radius: 10px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-align: center;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  font-family: "Rajdhani", sans-serif;
+  margin-top: 30px;
+  background-color: #23d2e2;
+  box-shadow: 4px 7px 12px 0 rgba(97, 93, 250, 0.2);
+}
+body .main .flex .form .register-form > .content form button:hover {
+  background-color: #1bc5d4;
+  cursor: pointer;
+}
+body .main .flex .form .register-form > .content .contact {
+  margin-top: 30px;
+  font-size: 1.4rem;
+  line-height: 24px;
+  font-weight: 500;
+  color: #3e3f5e;
+}
+body .main .flex .form .register-form > .content .contact a {
+  color: #23d2e2;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 1364px) {
+  body > .second-bg {
+    display: none;
+  }
+  body .main {
+    padding: 80px 0 100px;
+    height: 100%;
+  }
+  body .main .flex {
+    flex-direction: column;
+  }
+  body .main .flex #login:checked ~ .content .tabs .login-tab {
+    background-color: #fff;
+    color: #3e3f5e;
+  }
+  body .main .flex #login:checked ~ .form .login-form {
+    display: block;
+    transform: translateX(0);
+  }
+  body .main .flex #register:checked ~ .content .tabs .register-tab {
+    background-color: #fff;
+    color: #3e3f5e;
+  }
+  body .main .flex #register:checked ~ .form .register-form {
+    display: block;
+    transform: translateX(0);
+  }
+  body .main .flex > .content {
+    padding-bottom: 0;
+  }
+  body .main .flex > .content .desc {
+    display: none;
+  }
+  body .main .flex > .content .tabs {
+    margin-top: 40px;
+  }
+  body .main .flex .form {
+    margin-top: 80px;
+  }
+  body .main .flex .form .rocket {
+    display: none;
+  }
+  body .main .flex .form .login-form, body .main .flex .form .register-form {
+    position: relative;
+    display: none;
+    transition: all 0;
+    opacity: 1;
+    visibility: visible;
+  }
+  body .main .flex .form .register-form {
+    transform: translateX(0);
+  }
+}
+@media screen and (max-width: 600px) {
+  body .main .flex .form {
+    width: 92vw;
+    margin: 80px auto 0;
+  }
+}
+@media screen and (max-width: 500px) {
+  body .main .flex .form .login-form, body .main .flex .form .register-form {
+    position: relative;
+    display: none;
+    transition: all 0;
+    opacity: 1;
+    visibility: visible;
+    padding: 40px 32px;
+  }
+  body .main .flex .form .login-form > .content, body .main .flex .form .register-form > .content {
+    overflow: visible;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

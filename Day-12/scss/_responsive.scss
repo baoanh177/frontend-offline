@@ -1,0 +1,104 @@
+@media screen and (max-width: 1364px) {
+    body {
+        > .second-bg {
+            display: none;
+        }
+        .main {
+            padding: 80px 0 100px;
+            height: 100%;
+            .flex {
+                flex-direction: column;
+                #login {
+                    &:checked {
+                        &~.content .tabs .login-tab {
+                            background-color: #fff;
+                            color: $text-color;
+                        }
+                        &~.form .login-form {
+                            display: block;
+                            transform: translateX(0);
+                        }
+                    }
+                }
+                #register {
+                    &:checked {
+                        &~.content .tabs .register-tab {
+                            background-color: #fff;
+                            color: $text-color;
+                        }
+                        &~.form .register-form {
+                            display: block;
+                            transform: translateX(0);
+                        }
+                    }
+                }
+                > .content {
+                    padding-bottom: 0;
+                    .desc {
+                        display: none;
+                    }
+                    .tabs {
+                        margin-top: 40px;
+                    }
+                }
+                .form {
+                    margin-top: 80px;
+                    .rocket {
+                        display: none;
+                    }
+                    .login-form, .register-form {
+                        position: relative;
+                        display: none;
+                        transition: all 0;
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                    
+                    .register-form {
+                        transform: translateX(0);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        .main {
+            .flex {
+                .form {
+                    width: 92vw;
+                    margin: 80px auto 0;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    body {
+        .main {
+            .flex {
+                .form {
+                    .login-form, .register-form {
+                        position: relative;
+                        display: none;
+                        transition: all 0;
+                        opacity: 1;
+                        visibility: visible;
+                        padding: 40px 32px;
+                        > .content {
+                            overflow: visible;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 333px) {
+    .row {
+    }
+}
