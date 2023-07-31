@@ -20,6 +20,7 @@ body::-webkit-scrollbar {
 
 a {
   text-decoration: none;
+  color: #2c2c2c;
 }
 a:hover {
   color: #46B20F;
