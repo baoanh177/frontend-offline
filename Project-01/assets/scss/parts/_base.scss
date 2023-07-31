@@ -1,0 +1,33 @@
+.container {
+    --container-width: 1200px;
+}
+
+@media screen and (max-width: 1199.98px) {
+    .container {
+        padding: 0 15px;
+    }
+}
+
+.justify-content-start {
+    justify-content: flex-start;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.justify-content-end {
+    justify-content: flex-end;
+}
+
+.align-items-start {
+    align-items: flex-start;
+}
+
+.align-items-end {
+    align-items: flex-end;
+}
+
+.align-items-center {
+    align-items: center;
+}

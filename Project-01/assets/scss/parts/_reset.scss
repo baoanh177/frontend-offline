@@ -1,0 +1,36 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	outline: 0;
+	border: 0;
+}
+
+html {
+	font-size: 10px;
+	scroll-behavior: smooth;
+	color: $textColor;
+	line-height: 1.25;
+	font-family: Inter, sans-serif;
+}
+
+body::-webkit-scrollbar {
+	display: none;
+}
+
+a {
+	text-decoration: none;
+	&:hover {
+		color: $primaryColor;
+	}
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+ul, ol {
+	list-style: none;
+}
