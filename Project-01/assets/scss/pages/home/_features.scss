@@ -1,0 +1,82 @@
+.features {
+    position: relative;
+    color: $textColor;
+    padding-bottom: 116.69px;
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #FFF0E7;
+        z-index: -1;
+    }
+    .container {
+        .heading {
+            .title {
+                margin: 0 auto;
+                max-width: 394px;
+                text-align: center;
+                font-size: 3.16rem;
+                font-weight: 800;
+                line-height: 131.523%;
+            }
+            .subtitle {
+                margin: 24.3px auto 0;
+                max-width: 745px;
+                text-align: center;
+                font-size: 1.6rem;
+                font-weight: 400;
+                line-height: 20.417px; /* 127.604% */
+            }
+        }
+        .list-item {
+            margin: 50px auto 0;
+            display: grid;
+            justify-content: center;
+            grid-template-columns: 345px 345px 345px;
+            gap: 25px;
+            @include responsive(laptop-md) {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+            @include responsive(mobile) {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                max-width: 345px;
+                height: 50%;
+            }
+            .item {
+                background-color: #fff;
+                border-radius: 8.3px;
+                height: 360px;
+                overflow: hidden;
+                .thumb {
+                    width: 100%;
+                    overflow: hidden;
+                    img {
+                        width: 100%;
+                        object-fit: cover;
+                    }
+                }
+                .title {
+                    padding: 24px 0 0 27px;
+                    color: #E05000;
+                    text-shadow: 0px 3.3px 3.3px rgba(0, 0, 0, 0.25);
+                    font-size: 2rem;
+                    font-weight: 600;
+                    line-height: 26.667px; /* 133.333% */
+                }
+                .desc {
+                    padding: 0 18px 0 27px;
+                    color: #19191B;
+                    font-size: 1.6rem;
+                    font-weight: 400;
+                    line-height: 20.417px; /* 127.604% */
+                }
+            }
+        }
+    }
+}

@@ -26,6 +26,10 @@
             gap: 21.6px;
             justify-content: center;
             align-items: center;
+
+            @include responsive(laptop-sm) {
+                grid-template-columns: 94vw;
+            }
             &::before {
                 position: absolute;
                 content: "";
@@ -87,46 +91,3 @@
     }
 }
 
-@media screen and (max-width: 1000px) {
-    .about {
-        .container {
-            .list-item {
-                grid-template-columns: 1fr 1fr;
-                padding: 113px 0;
-                .item {
-                    filter: blur(2px);
-                    cursor: pointer;
-                    transition: 0.2s ease;
-                    transition-property: outline filter z-index;
-                    &:hover {
-                        outline: 1px solid $primaryColor;
-                        filter: blur(1px);
-                    }
-                    &:nth-child(2) {
-                        filter: blur(0);
-                        position: absolute;
-                        width: 50%;
-                        z-index: 3;
-                        left: 50%;
-                        transform: translateX(-50%);
-                        background-color: #fff;
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media screen and (max-width: 550px) {
-    .about {
-        .container {
-            .list-item {
-                .item {
-                    &:nth-child(2) {
-                        width: 80%;
-                    }
-                }
-            }
-        }
-    }
-}

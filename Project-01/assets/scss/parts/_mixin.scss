@@ -1,0 +1,19 @@
+@mixin responsive($device: desktop) {
+  $devices: (
+    desktop: 1400.98,
+    laptop: 1200.98,
+    "laptop-md": 1132.98,
+    "laptop-sm": 1024.98,
+    tablet: 992.98,
+    mobile: 768.98,
+    "mobile-md": 576.98,
+    "mobile-sm": 480.98,
+  );
+  @each $deviceName, $deviceWidth in $devices {
+    @if $device == $deviceName {
+      @media (max-width: #{$deviceWidth}px) {
+        @content;
+      }
+    }
+  }
+}

@@ -1,0 +1,95 @@
+.blog {
+    padding: 28.67px 0 100px;
+    color: $textColor;
+    .container {
+        .heading {
+            .title {
+                text-align: center;
+                font-size: 3.16rem;
+                font-weight: 800;
+                line-height: 131.523%;
+            }
+            .subtitle {
+                margin: 23px auto 0;
+                text-align: center;
+                max-width: 657.5px;
+                font-size: 1.6rem;
+                font-weight: 400;
+                line-height: 20.417px;
+            }
+        }
+        .list-blog {
+            margin-top: 28.8px;
+            display: grid;
+            justify-content: center;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 23px;
+            @include responsive(mobile-md) {
+                grid-template-columns: 1fr;
+            }
+            .blog-item {
+                display: flex;
+                flex-direction: column;
+                gap: 16.2px;
+                .thumb {
+                    border-radius: 6.67px;
+                    width: 100%;
+                    img {
+                        width: 100%;
+                        object-fit: cover;
+                    }
+                }
+                .post-time {
+                    display: flex;
+                    justify-content: space-between;
+                    font-size: 1.5rem;
+                    font-weight: 500;
+                    @include responsive(mobile) {
+                        display: none;
+                    }
+                    @include responsive(mobile-md) {
+                        display: flex;
+                    }
+                    > span {
+                        color: $primaryColor;
+                    }
+                    .date {
+                        display: flex;
+                        gap: 12.5px;
+                        span {
+                            color: #a3a3a3;
+                        }
+                    }
+                }
+                .blog-title {
+                    font-size: 2rem;
+                    font-weight: 600;
+                    line-height: 26.667px;
+                }
+                .desc {
+                    font-size: 1.6rem;
+                    font-weight: 400;
+                    line-height: 20.417px;
+                    @include responsive(mobile) {
+                        display: none;
+                    }
+                    @include responsive(mobile-md) {
+                        display: block;
+                    }
+                }
+            }
+        }
+        .more {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 79.67px auto 0;
+            width: 153px;
+            height: 46.7px;
+            border-radius: 6.67px;
+            border: 1px solid $primaryColor;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+    }
+}

@@ -1,5 +1,5 @@
 .products {
-    padding-top: 100px;
+    padding: 100px 0;
     .container {
         .title {
             font-size: 3.16rem;
@@ -46,6 +46,10 @@
                     margin-top: 17.19px;
                     font-size: 2.8rem;
                     font-weight: 700;
+                    line-height: 33px;
+                    max-height: 66px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
                     &::after {
                         display: block;
                         position: absolute;
@@ -107,11 +111,11 @@
             .list-product {
                 margin-top: 80px;
                 display: flex;
-                overflow-x: scroll;
-                gap: 0 0;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 40px;
                 .product {
                     flex-shrink: 0;
-                    width: 100vw;
                     padding: 0 30px;
                     .thumb {
                         &::before {
