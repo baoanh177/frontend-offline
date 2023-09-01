@@ -81,6 +81,8 @@ console.groupEnd()
 
 // Bai 2
 console.group("Bai 2")
+    const numbers = [100, 200, 300, 400]
+
     Array.prototype.reduce2 = function(callback, init) {
         let i = 0
         let acc = init
