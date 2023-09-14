@@ -8,6 +8,9 @@ const formBlock = $('.form-block')
 loginBtn.onclick = () => {
     formBlock.removeAttribute('hidden')
     overlay.removeAttribute('hidden')
+    handleClearForm($('.login-form'))
+    handleClearForm($('.register-form'))
+    handleActiveLoginTab()
 }
 
 overlay.onclick = () => {
@@ -95,13 +98,15 @@ const loginActive = $('.login.active-tab')
 const login = $('.login')
 const register = $('.register')
 
-login.onclick = function() {
+function handleActiveLoginTab() {
     login.classList.add('active-tab')
     register.classList.remove('active-tab')
     $('.login-form').style.display = 'block'
     $('.register-form').style.display = 'none'
     handleClearForm($('.register-form'))
 }
+
+login.onclick = handleActiveLoginTab
 register.onclick = function() {
     register.classList.add('active-tab')
     login.classList.remove('active-tab')
