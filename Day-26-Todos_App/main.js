@@ -101,6 +101,10 @@ function handleSetModelWidth() {
         if(element.offsetWidth > maxWidth) {
             maxWidth = element.offsetWidth
         }
+        if(maxWidth > window.innerWidth - 142) {
+            maxWidth = window.innerWidth - 142
+            element.style.whiteSpace = 'inherit'
+        }
     })
     $('.model').style.width = maxWidth + 60 + 32 + 40 + 10 + "px"
     // 60: padding .model trái phải 30px
@@ -124,3 +128,5 @@ submitBtn.onclick = function() {
 }
 
 render()
+
+console.log(window.innerWidth)
