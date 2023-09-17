@@ -1,4 +1,6 @@
 /*
+    * Comment không dành cho trợ giảng :)))
+
     Đoạn nào không hiểu thì a mới đọc comment, chứ đọc hết đang dễ thành khó đấy =))))
 
     $: Viết tắt của document.querySelector
@@ -128,5 +130,3 @@ submitBtn.onclick = function() {
 }
 
 render()
-
-console.log(window.innerWidth)
