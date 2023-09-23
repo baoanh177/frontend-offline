@@ -1,0 +1,39 @@
+.services {
+    padding-top: 133px;
+    color: $textColor;
+    .container {
+        .list-item {
+            margin: 0 auto;
+            max-width: 975px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 38.8px 52.5px;
+            .item {
+                display: flex;
+                gap: 15.8px;
+                .icon {
+                    flex-shrink: 0;
+                    img {
+                        width: 100%;
+                    }
+                }
+                .content {
+                    .title {
+                        font-size: 2rem;
+                        font-weight: 600;
+                        line-height: 26.667px; /* 133.333% */
+                    }
+                    .desc {
+                        font-size: 1.7rem;
+                        font-weight: 500;
+                        line-clamp: 3;
+                        -webkit-line-clamp: 3;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                }
+            }
+        }
+    }
+}

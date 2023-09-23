@@ -67,7 +67,7 @@ function kiemTraSNT(num) {
     console.log(num, "la so nguyen to")
 }
 
-kiemTraSNT(7)
+kiemTraSNT(2)
 console.log("")
 
 // Bai 5

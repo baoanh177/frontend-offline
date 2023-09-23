@@ -718,4 +718,40 @@ ul, ol {
   line-height: 20.417px; /* 127.604% */
 }
 
+.services {
+  padding-top: 133px;
+  color: #2c2c2c;
+}
+.services .container .list-item {
+  margin: 0 auto;
+  max-width: 975px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 38.8px 52.5px;
+}
+.services .container .list-item .item {
+  display: flex;
+  gap: 15.8px;
+}
+.services .container .list-item .item .icon {
+  flex-shrink: 0;
+}
+.services .container .list-item .item .icon img {
+  width: 100%;
+}
+.services .container .list-item .item .content .title {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 26.667px; /* 133.333% */
+}
+.services .container .list-item .item .content .desc {
+  font-size: 1.7rem;
+  font-weight: 500;
+  line-clamp: 3;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 /*# sourceMappingURL=style.css.map */
