@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
@@ -29,11 +29,22 @@
             </div>
             <span>00:00</span>
         </div>
+        <div class="karaoke-btn">Karaoke</div>
     </div>
 
-    <audio src="./lancuoi.mp3" class="audio"></audio>
+    <div class="karaoke-model">
+        <div class="close">&times;</div>
+        <div class="info">
+            <div class="song-name">Ngày mai người ta lấy chồng</div>
+            <div class="singer">Singer: Thành Đạt</div>
+        </div>
+        <div class="karaoke-inner">
+        </div>
+    </div>
 
-    <script src="./main.js"></script>
+    <audio src="./assets/music/ngaymainguoitalaychong.mp3" class="audio"></audio>
+
+    <script type="module" src="./js/main.js"></script>
 </body>
 
 </html>
