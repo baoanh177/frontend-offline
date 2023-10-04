@@ -19,18 +19,20 @@ items.forEach((item) => {
     }
 
     item.addEventListener('dragstart', getElementOffsetY)
+
     const handleDrag = e => {
-        let prev = next = false
         const nextElement = e.target.nextElementSibling
         let prevElement = e.target.previousElementSibling
         const elementPositionTop = e.clientY - elementOffsetY // Điểm trên cùng của item được kéo
 
         if(nextElement && elementPositionTop > nextElement.offsetTop + 10) { // + 10: kéo quá khoảng 10px thì thay đổi vị trí
             inner.insertBefore(item, nextElement.nextElementSibling)
-        }else if(elementPositionTop > elementOffsetY && prevElement && elementPositionTop <= prevElement.offsetTop - 10) { // e k biết giait thích sao đâu =))
+        }else if(elementPositionTop > elementOffsetY && prevElement && elementPositionTop <= prevElement.offsetTop - 10) {
+            // e cũng k biết giải thích cái if này sao đâu =))
             inner.insertBefore(item, item.previousElementSibling)
         }
     }
+
     item.addEventListener('drag', handleDrag)
 })
 
