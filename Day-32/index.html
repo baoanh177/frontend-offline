@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <span>Doc Editor</span>
+        </div>
+        <div class="toolbar">
+            <div class="file-actions">
+                <label for="#file-manager" class="file-manager-toggle">
+                    File
+                    <i class="fa-solid fa-caret-down"></i>
+                </label>
+                <div id="file-manager" class="file-manager">
+                    <div class="new-file">New</div>
+                    <a class="save-as-txt" href="" download>Save as TXT</a>
+                    <div class="save-as-pdf">Save as PDF</div>
+                </div>
+                <input type="text" class="file-name" value="untitled">
+            </div>
+            <div class="tool">
+                <div class="bold text-style">B</div>
+                <div class="italic text-style">I</div>
+                <div class="underline text-style">U</div>
+                <input type="color" class="color">
+            </div>
+        </div>
+        <div class="input" contenteditable="true" spellcheck="false"></div>
+        <div class="footer">
+            <div class="characters">Characters: <b>0</b></div>
+            <div class="words">Words: <b>0</b></div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.0/html2pdf.bundle.min.js"
+        integrity="sha512-w3u9q/DeneCSwUDjhiMNibTRh/1i/gScBVp2imNVAMCt6cUHIw6xzhzcPFIaL3Q1EbI2l+nu17q2aLJJLo4ZYg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./main.js"></script>
+</body>
+
+</html>

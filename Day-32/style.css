@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+.header {
+    display: flex;
+    padding: 20px;
+    font-weight: bold;
+    font-size: 30px;
+    border-bottom: 2px solid #ccc;
+}
+
+.bold {
+    font-weight: bold;
+}
+.italic {
+    font-style: italic;
+}
+.underline {
+    text-decoration: underline;
+}
+
+.container {
+    width: 1000px;
+    margin-left: 50px;
+}
+
+.toolbar, .tool, .file-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.toolbar {
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.file-actions {
+    position: relative;
+}
+
+.file-name {
+    height: 35px;
+}
+
+.file-manager-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 4px;
+    background-color: #377feb;
+    color: #fff;
+    cursor: pointer;
+}
+
+.file-manager-toggle:hover {
+    background-color: #2063c8;
+}
+
+.show {
+    display: block !important;
+}
+
+.file-manager {
+    display: none;
+    position: absolute;
+    top: 110%;
+    padding: 10px 0 10px 0;
+    width: 160px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    line-height: 2;
+    background-color: #fff;
+}
+
+.file-manager * {
+    padding-left: 20px;
+}
+
+.file-manager *:hover {
+    background-color: #eee;
+    cursor: pointer;
+}
+
+.tool * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 35px;
+    border: 1px solid #000;
+    background-color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.input {
+    height: 300px;
+    box-shadow: 0 0 2px 2px #ccc;
+    border: 1px solid #ccc;
+}
+
+.footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+    padding: 10px;
+}
+
+.active {
+    background-color: #000 !important;
+    color: #fff;
+}
