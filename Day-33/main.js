@@ -6,8 +6,8 @@ const countdown = $('span')
 
 let prevValue
 let count = 30
-
 let flag = true
+
 window.addEventListener('visibilitychange', () => flag = !flag)
 const getTime = () => {
     countdown.innerText = count
@@ -21,7 +21,6 @@ const getTime = () => {
         }
     }
     prevValue = (performance.now() / 1000).toFixed()
-    console.log(123)
 }
 
 getTime()
