@@ -15,6 +15,7 @@ recognition.onresult = function (event) {
 
 recordBtn.onclick = function () {
     recognition.start()
+    result = ""
 
     recordBtn.style.background = "lightcoral"
     recordBtn.innerText = "Anh Quân nói đi"
