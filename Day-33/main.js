@@ -25,4 +25,4 @@ const getTime = () => {
 
 getTime()
 
-getLink.onclick = () => window.location.href = '//fullstack.edu.vn'
+getLink.onclick = () => window.location.href = 'https://youtu.be/dQw4w9WgXcQ?si=C-w1RMRNPpKKoSQh'
