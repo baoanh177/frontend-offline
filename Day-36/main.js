@@ -23,13 +23,11 @@ class F8 {
                                 element.addEventListener(event, (e) => {
                                     eval(action)
                                     this.render()
-                                    loop()
                                 })
                             }
                         })
                     })
                 }
-                loop()
 
                 this.render = function() {
                     
@@ -76,6 +74,6 @@ F8.component("counter-app", {
 
 
 
-F8.component("header-component", {
-    template: `<h1>HEADER</h1>`
-})
+// F8.component("header-component", {
+//     template: `<h1>HEADER</h1>`
+// })
