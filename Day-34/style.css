@@ -36,4 +36,5 @@
     position: absolute;
     background: url("https://fastly.picsum.photos/id/507/500/300.jpg?hmac=A7sjh_DZo-mh9g8NP9txdoymxgYJEFgfWK12xmbTwlE") no-repeat;
     background-size: cover;
+    z-index: -1;
 }
