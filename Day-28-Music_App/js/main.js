@@ -3,6 +3,7 @@ import { lyrics } from "./store/lyrics.js" // Lấy lyrics từ file lyrics.js
 const $ = document.querySelector.bind(document)
 const $$ = document.querySelectorAll.bind(document)
 
+const wrapper = $('.wrapper')
 const progressBar = $('.progress-bar')
 const progress = $('.progress')
 const playInner = $('.play-inner')
@@ -10,10 +11,11 @@ const playBtn = $('.play-btn')
 const audio = $('.audio')
 const dot = $('.progress .dot')
 const time = $('.time')
-const karaokeInner = $('.karaoke-inner');
 const karaokeModel = $('.karaoke-model')
+const karaokeInner = $('.karaoke-inner');
 const openModel = $('.karaoke-btn')
-const closeModel = $('.close')
+
+let karaokeIsOpen = false
 
 const sentences = lyrics.sentences
 
@@ -116,7 +118,7 @@ document.addEventListener('mouseup', handleMouseUp)
 // Handle Drag
 const handleDrag = e => {
     if(isDrag) {
-        const spaceX = e.clientX - (progressBar.offsetLeft + playInner.offsetLeft)
+        const spaceX = e.clientX - (progressBar.offsetLeft + playInner.offsetLeft + wrapper.offsetLeft)
         let percent = (spaceX * 100) / progressBar.clientWidth
         if(percent < 0) {
             percent = 0
@@ -159,10 +161,12 @@ playBtn.onclick = () => audio.paused ? audio.play() : audio.pause()
 audio.onplay = () => {
     handleHighlightWord()
     playBtn.children[0].className = "fa-solid fa-pause"
+    $('.cd').style.animationPlayState = 'running'
 }
 audio.onpause = () => {
     playBtn.children[0].className = "fa-solid fa-play"
     cancelAnimationFrame(requestId)
+    $('.cd').style.animationPlayState = 'paused'
 }
 
 
@@ -194,9 +198,6 @@ const handleHighlightWord = () => {
     requestId = requestAnimationFrame(handleHighlightWord)
 }
 
-openModel.onclick = () => karaokeModel.style.top = '0vh'
-closeModel.onclick = () => karaokeModel.style.top = '100vh'
-
 const sens = document.querySelectorAll('.line')
 
 const handleShowSen = (currentMs) => {
@@ -219,5 +220,18 @@ const handleShowSen = (currentMs) => {
         if(index > 0 && currentMs < sentences[index - 1].words[0].startTime) {
             sens[index].hide()
         }
+    }
+}
+
+openModel.onclick = () => {
+    karaokeIsOpen = !karaokeIsOpen
+    if(karaokeIsOpen) {
+        wrapper.style.left = window.innerWidth - 600 + 'px'
+        karaokeModel.style.width = 800 + 'px'
+        karaokeInner.show()
+    }else {
+        wrapper.style.left = 100 + 'px'
+        karaokeModel.style.width = 500 + 'px'
+        karaokeInner.hide()
     }
 }
