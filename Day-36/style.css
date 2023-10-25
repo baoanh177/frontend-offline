@@ -1,26 +1,11 @@
 body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     background-color: #8EC5FC;
     background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
     font-family: Arial, Helvetica, sans-serif;
     height: 100vh;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin: 0 auto;
-    width: 350px;
-}
-
-.box {
-    width: 350px;
-    height: 300px;
-}
-
-.box img {
-    width: 100%;
-    opacity: 0;
-    transition: opacity 0.4s;
 }
