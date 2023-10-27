@@ -351,11 +351,11 @@ body {
 .heading {
     color: #242424;
     font-size: 24px;
-    font-weight: 900;
 }
 
 .heading .title {
     font-size: 1em;
+    font-weight: 900;
 }
 
 .course-list {
