@@ -123,8 +123,24 @@
 
         <main class="main">
             <div class="slide-container">
-                <div class="slideshow">
-                    
+                <div class="slideshow skeleton">
+                    <div class="slideshow-left">
+                        <div class="title"></div>
+                        <p class="desc">
+                        </p>
+                        <div class="see-more-btn"></div>
+                    </div>
+                    <div class="slideshow-right">
+                        <img src="" alt="">
+                    </div>
+                    <div class="slide-controls">
+                        <div class="prev">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </div>
+                        <div class="next">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+                    </div>
                 </div>
                 <div class="slide-index">
                     <div class="slide-tab active"></div>
@@ -137,58 +153,13 @@
             </div>
             <div class="pro-courses">
                 <div class="heading">
-                    <h2 class="title skeleton skeleton-title"></h2>
+                    <h2 class="title skeleton skeleton-text"></h2>
                 </div>
                 <ul class="course-list">
 
                 </ul>
             </div>
         </main>
-
-        <!-- Template -->
-        <template id="course-template">
-            <li class="course">
-                <div class="thumb skeleton">
-                    <div class="icon-wrap">
-                        <img src="" class="skeleton" alt="">
-                    </div>
-                    <img src="" class="skeleton" alt="">
-                    <div class="overlay">
-                        <div class="see-course">
-                            <div class="skeleton skeleton-sub"></div>
-                        </div>
-                    </div>
-                </div>
-                <h3 class="course-name">
-                    <div class="skeleton skeleton-sub"></div>
-                </h3>
-                <div class="price">
-                    <div class="skeleton skeleton-sub"></div>
-                </div>
-            </li>
-        </template>
-
-        <template id="slide-template">
-            <div class="slideshow-left">
-                <div class="title skeleton skeleton-title"></div>
-                <p class="desc">
-                    <div class="skeleton skeleton-text"></div>
-                    <div class="skeleton skeleton-text"></div>
-                </p>
-                <div class="see-more-btn skeleton skeleton-btn"></div>
-            </div>
-            <div class="slideshow-right">
-                <img src="https://files.fullstack.edu.vn/f8-prod/banners/36/6454dee96205c.png" alt="">
-            </div>
-            <div class="slide-controls">
-                <div class="prev">
-                    <i class="fa-solid fa-chevron-left"></i>
-                </div>
-                <div class="next">
-                    <i class="fa-solid fa-chevron-right"></i>
-                </div>
-            </div>
-        </template>
 
     </div>
     <script type="module" src="./main.js"></script>

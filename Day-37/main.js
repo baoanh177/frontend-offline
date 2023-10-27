@@ -1,96 +1,71 @@
 import { data } from "./courses.js";
 
-const slideContainer = document.querySelector('.slideshow')
-const courseListElement = document.querySelector('.course-list')
-const proCourse = document.querySelector('.pro-courses')
-const slideshowTemplate = document.getElementById('slide-template')
-const courseTemplate = document.getElementById('course-template')
-
-for (let i = 0; i < 4; i++) {
-    courseListElement.append(courseTemplate.content.cloneNode(true));
-}
-slideContainer.append(slideshowTemplate.content.cloneNode(true))
-
-const app = {
-    data: {},
-    getCourses() {
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                if(Object.keys(data).length > 0) {
-                    resolve(data)
-                }else {
-                    reject("Không lấy được dữ liệu")
-                }
-            }, 2000)
-        })
-    },
-    render() {
-        const courseHtml = `
-            <div class="heading">
-                <h2 class="title">${this.data.pro_course.title}</h2>
-            </div>
-            <ul class="course-list">
-                ${this.data.pro_course.courses.map(course => {
-                    return `
-                        <li class="course ${!course.is_published ? 'disabled' : ''}">
-                            <div class="thumb">
-                                <div class="icon-wrap">
-                                    <div class="pro-icon">
-                                        <img src="./crown-icon.svg" alt="">
-                                    </div>
-                                </div>
-                                <img src="${course.image_url}" alt="">
-                                <div class="overlay">
-                                    <div class="see-course" onclick="document.querySelector('audio').play()">Xem khóa học</div>
-                                </div>
-                            </div>
-                            <h3 class="course-name">${course.title}</h3>
-                            <div class="price">
-                                <span class="old-price">${course.is_published ? course.old_price.toLocaleString('vi-VN') + 'đ' : ''}</span>
-                                <span class="new-price">${course.is_published ? course.price.toLocaleString('vi-VN') + 'đ' : ''}</span>
-                            </div>
-                        </li>
-                    `
-                }).join('')}
-            </ul>
-        `
-        proCourse.innerHTML = courseHtml
-        
-
-        const slideHtml = `
-            <div class="slideshow-left">
-                <div class="title">${this.data.slideshow.title}</div>
-                <p class="desc">
-                    ${this.data.slideshow.desc}
-                </p>
-                <div class="see-more-btn">${this.data.slideshow.btn_content}</div>
-            </div>
-            <div class="slideshow-right">
-                <img src="https://files.fullstack.edu.vn/f8-prod/banners/36/6454dee96205c.png" alt="">
-            </div>
-            <div class="slide-controls">
-                <div class="prev">
-                    <i class="fa-solid fa-chevron-left"></i>
-                </div>
-                <div class="next">
-                    <i class="fa-solid fa-chevron-right"></i>
-                </div>
-            </div>
-        `
-
-        slideContainer.innerHTML = slideHtml
-    },
-    start() {
-        this.getCourses()
-            .then(response => {
-                this.data    = response
-                this.render()
-            })
-            .catch(error => {
-                console.error(error)
-            })
-    }
+HTMLElement.prototype.removeSkeleton = function() {
+    this.className = this.className.split(' ').map(className => className.includes('skeleton') ? '' : className).join('')
 }
 
-app.start()
+const $ = document.querySelector.bind(document)
+const $$ = document.querySelectorAll.bind(document)
 
+const courseListElement = $('.course-list')
+
+const getData = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(data)
+        }, 2000)
+    })
+};
+
+(() => {
+    courseListElement.innerHTML = data.pro_course.courses.map(() => {
+        return `
+            <li class="course">
+                <div class="thumb skeleton">
+                    <div class="icon-wrap">
+                        <img src="" class="pro-icon" alt="">
+                    </div>
+                    <img src="" class="skeleton" alt="">
+                    <div class="overlay">
+                        <div class="see-course">
+                            Xem khóa học
+                        </div>
+                    </div>
+                </div>
+                <h3 class="course-name">
+                    <div class="skeleton skeleton-text"></div>
+                </h3>
+                <div class="price skeleton skeleton-text">
+                    <span class="old-price "></span>
+                    <span class=" new-price"></span>
+                </div>
+            </li>
+        `
+    }).join('')
+
+})()
+
+
+getData().then(responseData => {
+    const courses = $$('.course')
+    document.querySelector('.heading .title').innerText = 'Khóa học Pro'
+    document.querySelector('.heading .title').removeSkeleton()
+    responseData.pro_course.courses.forEach((course, index) => {
+        courses[index].querySelector('.icon-wrap').children[0].src = './crown-icon.svg'
+        courses[index].querySelector('.thumb > img').src = course.image_url
+        courses[index].querySelector('.course-name').innerText = course.title
+        courses[index].querySelector('.old-price').innerText = course.old_price ? course.old_price.toLocaleString('vi-VN') + 'đ' : ''
+        courses[index].querySelector('.new-price').innerText = course.price ? course.price.toLocaleString('vi-VN') + 'đ' : ''
+        const skeletons = courses[index].querySelectorAll('*[class*=skeleton]')
+        skeletons.forEach(element => {
+         element.removeSkeleton()
+      })
+    })
+
+    $('.slideshow .title').innerText = responseData.slideshow.title
+    $('.slideshow .desc').innerText = responseData.slideshow.desc
+    $('.slideshow .see-more-btn').innerText = responseData.slideshow.btn_content   
+    $('.slideshow .see-more-btn').style.opacity = 1 
+    $('.slideshow .slideshow-right img').src = responseData.slideshow.image
+    $('.slideshow').removeSkeleton()
+})

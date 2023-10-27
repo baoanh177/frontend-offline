@@ -3,7 +3,8 @@ const data = {
         title: "Đăng ký học Offline tại Hà Nội",
         desc: `Hình thức học Offline phù hợp nếu bạn muốn được hướng dẫn và hỗ trợ trực tiếp tại lớp. 
                 Giờ học linh hoạt, phù hợp cả sinh viên và người đi làm.`,
-        btn_content: 'nhận tư vấn'        
+        btn_content: 'nhận tư vấn',
+        image: `https://files.fullstack.edu.vn/f8-prod/banners/36/6454dee96205c.png`
     },
     pro_course: {
         title: 'Khóa học Pro',
