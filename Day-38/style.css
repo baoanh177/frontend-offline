@@ -1,0 +1,310 @@
+/* ///////////     RESET      ///////////// */
+
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+::-webkit-scrollbar {
+    width: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+li {
+    list-style: none;
+}
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* ///////////     END-RESET      ///////////// */
+
+body {
+    font-family: "Nunito", sans-serif;
+    font-weight: 400;
+}
+
+.title {
+    text-align: center;
+    font-size: 30px;
+    font-size: 700;
+    line-height: 40px;
+}
+
+.todo-container {
+    position: relative;
+    margin: 130px auto 0;
+    width: 736px;
+}
+
+.header {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 10px;
+}
+
+.todo-search-box {
+    display: flex;
+    align-items: center;
+    height: 57px;
+    flex-grow: 1;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    padding: 0 10px;
+    background-color: #fff;
+}
+
+.todo-search-box input {
+    flex-grow: 1;
+    height: 100%;
+}
+
+.todo-search-box input::placeholder {
+    font-size: 16px;
+}
+
+.todo-search-box .search-icon {
+    width: 48px;
+    height: 41px;
+    border-radius: 6px;
+    background-color: lightseagreen;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s background-color;
+    cursor: pointer;
+}
+
+.search-icon:hover {
+    background-color: seagreen;
+}
+
+.add-todo-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #fff;
+    background-color: limegreen;
+    border-radius: 6px;
+    width: 110px;
+    height: 44px;
+    transition: 0.2s background-color;
+}
+
+.add-todo-btn:hover {
+    background-color: green;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    height: 72px;
+    padding: 16px;
+    box-shadow: 0 0 5px 0 #ccc;
+    border-radius: 8px;
+}
+
+.todo-item .actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.todo-item span {
+    flex-grow: 1;
+}
+
+.todo-item .actions > * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    border-radius: 6px;
+    color: #fff;
+    transition: background-color 0.2s;
+    cursor: pointer;
+}
+
+.todo-item .actions > label svg {
+    width: 18px;
+    height: 18px;
+    padding-top: 4px;
+    fill: white;
+}
+
+.delete-todo {
+    background-color: red;
+}
+
+.delete-todo:hover {
+    background-color: rgb(218, 16, 16);
+}
+
+.edit-todo {
+    background-color: rgb(62, 146, 255);
+}
+
+.edit-todo:hover {
+    background-color: rgb(49, 112, 194);
+}
+
+.incomplete-todo .complete-toggle {
+    background-color: #ccc;
+}
+
+.show-completed-todo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    font-size: 16px;
+    gap: 5px;
+    height: 44px;
+    margin-top: 10px;
+    padding: 10px 16px;
+    font-size: 500;
+    border-radius: 6px;
+    color: #fff;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: 0.2s background-color;
+    user-select: none;
+}
+
+.completed-todo {
+    display: none;
+}
+
+.completed-todo .complete-toggle {
+    background-color: limegreen;
+}
+
+#show-completed-todo-toggle:checked ~ .show-completed-todo {
+    background-color: limegreen;
+}
+
+#show-completed-todo-toggle:checked ~ .completed-todo {
+    display: block;
+}
+
+.highlight {
+    background-color: lightblue;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+form {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, visibility 0.2s;
+}
+
+#add-form-toggle:checked ~ .add-form,
+#add-form-toggle:checked ~ .overlay,
+#edit-form-toggle:checked ~ .edit-form,
+#edit-form-toggle:checked ~ .overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+form {
+    position: absolute;
+    background-color: lightblue;
+    width: 500px;
+    padding: 30px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 8px;
+    background-color: #fff;
+    z-index: 999;
+}
+
+form .todo-title {
+    height: 58px;
+    width: 100%;
+    padding: 0 14px;
+    border-radius: 6px;
+    border: 1px solid #bbb;
+    background-color: #eeeeee80;
+}
+
+form .line {
+    margin: 24px 0;
+    height: 1px;
+    width: 100%;
+    background-color: #ccc;
+}
+
+form .todo-title {
+    font-size: 16px;
+}
+
+form .todo-title::placeholder {
+    font-size: 16px;
+}
+
+form .actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+}
+
+form button,
+form .cancel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    height: 45px;
+    padding: 0 20px;
+    border-radius: 6px;
+    background-color: limegreen;
+    color: #fff;
+    font-weight: 500;
+    transition: background-color 0.2s;
+    cursor: pointer;
+}
+
+form .cancel {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ccc;
+}
+
+form .cancel:hover {
+    background-color: #eeeeee80;
+}
+
+form button:hover {
+    background-color: green;
+}
