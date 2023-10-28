@@ -17,7 +17,7 @@
 
 <body>
     <div class="todo-container">
-        <h1 class="title">Smatyx Todos App</h1>
+        <h1 class="title"><span>Smatyx</span> Todos App</h1>
         <div class="header">
             <div class="todo-search-box">
                 <input type="text" class="search-input" placeholder="Search Todos">
@@ -43,7 +43,6 @@
 
         <!-- Add form -->
         <input type="checkbox" hidden id="add-form-toggle">
-        <label class="overlay" for="add-form-toggle"></label>
         <form action="" class="add-form">
             <input type="text" class="todo-title" required placeholder="Add Todos">
             <div class="line"></div>
@@ -52,10 +51,10 @@
                 <label class="cancel" for="add-form-toggle">Cancel</label>
             </div>
         </form>
-
+        
         <!-- Edit form -->
         <input type="checkbox" hidden id="edit-form-toggle">
-        <label class="overlay" for="edit-form-toggle"></label>
+        <label class="overlay"></label>
         <form action="" class="edit-form">
             <input type="text" class="todo-title" required autofocus placeholder="Edit Todos">
             <div class="line"></div>

@@ -37,6 +37,9 @@ img {
 body {
     font-family: "Nunito", sans-serif;
     font-weight: 400;
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    min-height: 100vh;
 }
 
 .title {
@@ -46,10 +49,20 @@ body {
     line-height: 40px;
 }
 
+.title span {
+    color: transparent;
+    -webkit-background-clip: text;
+    background-color: #08AEEA;
+    background-image: linear-gradient(270deg, #08AEEA 0%, #2AF598 100%);
+}
+
 .todo-container {
     position: relative;
-    margin: 130px auto 0;
-    width: 736px;
+    margin: 80px auto 0;
+    width: 800px;
+    padding: 30px;
+    background-color: #ededed;
+    border-radius: 12px;
 }
 
 .header {
@@ -122,6 +135,7 @@ body {
     padding: 16px;
     box-shadow: 0 0 5px 0 #ccc;
     border-radius: 8px;
+    background-color: #fff;
 }
 
 .todo-item .actions {
@@ -187,7 +201,7 @@ body {
     font-size: 500;
     border-radius: 6px;
     color: #fff;
-    background-color: #ccc;
+    background-color: #999;
     cursor: pointer;
     transition: 0.2s background-color;
     user-select: none;
@@ -236,13 +250,13 @@ form {
 }
 
 form {
-    position: absolute;
+    position: fixed;
     background-color: lightblue;
     width: 500px;
     padding: 30px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -70%);
     border-radius: 8px;
     background-color: #fff;
     z-index: 999;

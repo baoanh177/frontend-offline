@@ -173,7 +173,10 @@ const app = {
             btn.onclick = () => {
                 const todoId = btn.closest('[data-id]').dataset.id
                 const isCompleted = this.todos.find(todo => todo.id == todoId).is_completed
-                this.editTodo(todoId, {is_completed: !isCompleted})
+                loading.style.display = 'flex'
+                this.editTodo(todoId, {is_completed: !isCompleted}).then(() => {
+                    loading.style.display = 'none'
+                })
             }
         })
 
