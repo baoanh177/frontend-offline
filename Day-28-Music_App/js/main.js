@@ -235,3 +235,25 @@ openModel.onclick = () => {
         karaokeInner.hide()
     }
 }
+
+const getColor = () => {
+    let colors = []
+    for(let c = 0; c < 5; c++) {
+        let hex = '#'
+        const texts = ['a', 'b', 'c', 'd', 'e', 'f']
+        while(hex.length < 7) {
+            const num = Math.ceil(Math.random() * 15)
+            if(num > 9) {
+                hex += texts[num - 10]
+            }else {
+                hex += num
+            }
+        }
+        colors.push(hex)
+    } 
+    const result = colors.join()
+    document.body.style.backgroundImage = `linear-gradient(-45deg, ${result})`
+}
+
+setInterval(getColor, 30000)
+
