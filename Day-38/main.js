@@ -28,7 +28,7 @@ const app = {
             return response.json()
         })
         .then(data => {
-            this.todos.unshift(data)
+            this.todos.push(data)
             this.render()
         })
         .catch(error => console.error(error))
