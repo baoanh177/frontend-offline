@@ -129,9 +129,9 @@ const app = {
             const is_completed = false
             if(title) {
                 loading.style.display = 'flex'
-                titleInput.value = ''
                 $('#add-form-toggle').checked = false
                 this.postTodo({ title, is_completed }).then(() => {
+                    titleInput.value = ''
                     loading.style.display = 'none'
                     titleInput.classList.remove('error')
                 })
