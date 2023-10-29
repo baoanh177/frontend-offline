@@ -53,7 +53,7 @@ const app = {
         .catch(error => console.error(error))
     },
     render() {
-        let coutCompletedTodo = 0
+        let countCompletedTodo = 0
         let completedTodosHtml = ''
         let incompleteTodosHtml = ''
         this.todos.forEach(todo => {
@@ -80,15 +80,17 @@ const app = {
                 </li>
             `
             if(todo.is_completed) {
-                coutCompletedTodo++
+                countCompletedTodo++
                 completedTodosHtml += todoTemplate
             }else {
                 incompleteTodosHtml += todoTemplate
             }
         })
+
         incompleteTodoEl.innerHTML = incompleteTodosHtml
         completedTodoEl.innerHTML = completedTodosHtml
-        $('.completed-quantity').innerText = coutCompletedTodo
+        $('.completed-quantity').innerText = countCompletedTodo
+
         this.handleEvents()
     },
     handleEvents() {
@@ -122,16 +124,22 @@ const app = {
         const addForm = $('.add-form')
         addForm.onsubmit = (e) => {
             e.preventDefault()
-            const title = addForm.querySelector('.todo-title').value
+            const titleInput = addForm.querySelector('.todo-title')
+            const title = titleInput.value.trim('')
             const is_completed = false
             if(title) {
                 loading.style.display = 'flex'
-                addForm.querySelector('.todo-title').value = ''
+                titleInput.value = ''
                 $('#add-form-toggle').checked = false
                 this.postTodo({ title, is_completed }).then(() => {
                     loading.style.display = 'none'
+                    titleInput.classList.remove('error')
                 })
+            }else {
+                titleInput.classList.add('error')
+                titleInput.value = ''
             }
+            addForm.querySelector('.cancel').onclick = () => titleInput.classList.remove('error')
         }
 
         // Delete todo
@@ -152,20 +160,26 @@ const app = {
             btn.onclick = () => {
                 const todoTitle = btn.closest('[data-id]').querySelector('span').innerText
                 const editForm = $('.edit-form')
-                editForm.querySelector('.todo-title').value = todoTitle
+                const titleInput = editForm.querySelector('.todo-title')
+                titleInput.value = todoTitle // dat ten bien chan qua
 
                 editForm.onsubmit = (e) => {
                     e.preventDefault()
-                    if(todoTitle) {
-                        const newTitle = editForm.querySelector('.todo-title').value
+                    if(titleInput.value) {
+                        const newTitle = titleInput.value
                         const todoId = btn.closest('[data-id]').dataset.id
                         loading.style.display = 'flex'
-                        editForm.querySelector('.todo-title').value = ''
+                        titleInput.value = ''
                         $('#edit-form-toggle').checked = false
                         this.editTodo(todoId, {title: newTitle}).then(() => {
                             loading.style.display = 'none'
+                            titleInput.classList.remove('error')
                         })
+                    }else {
+                        titleInput.classList.add('error')
+                        titleInput.value = ''
                     }
+                    editForm.querySelector('.cancel').onclick = () => titleInput.classList.remove('error')
                 }
             }
         })
@@ -175,6 +189,7 @@ const app = {
         completeBtns.forEach(btn => {
             btn.onclick = () => {
                 const todoId = btn.closest('[data-id]').dataset.id
+                console.log(todoId)
                 const isCompleted = this.todos.find(todo => todo.id == todoId).is_completed
                 loading.style.display = 'flex'
                 this.editTodo(todoId, {is_completed: !isCompleted}).then(() => {

@@ -127,11 +127,16 @@ body {
     background-color: green;
 }
 
+.todo-title.error {
+    border: 1px solid red;
+    background-color: rgb(255, 243, 243);
+}
+
 .todo-item {
     display: flex;
     align-items: center;
     margin-top: 10px;
-    height: 72px;
+    min-height: 72px;
     padding: 16px;
     box-shadow: 0 0 5px 0 #ccc;
     border-radius: 8px;
