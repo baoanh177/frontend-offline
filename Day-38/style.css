@@ -207,6 +207,10 @@ body {
     user-select: none;
 }
 
+.show-completed-todo i {
+    transition: 0.2s rotate;
+}
+
 .completed-todo {
     display: none;
 }
@@ -217,6 +221,10 @@ body {
 
 #show-completed-todo-toggle:checked ~ .show-completed-todo {
     background-color: limegreen;
+}
+
+#show-completed-todo-toggle:checked ~ .show-completed-todo i {
+    rotate: 90deg;
 }
 
 #show-completed-todo-toggle:checked ~ .completed-todo {

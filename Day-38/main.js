@@ -92,11 +92,11 @@ const app = {
         this.handleEvents()
     },
     handleEvents() {
-        const searchInput = $('.search-input')
-
+        
         // On search Input
-        searchInput.oninput = function() {
-            const inputValue = this.value.trim()
+        const searchInput = $('.search-input')
+        const handleHighlightText = function() {
+            const inputValue = searchInput.value.trim()
             const todos = $$('.incomplete-todo .todo-item')
             todos.forEach(todo => {
                 const todoTitle = todo.querySelector('span')
@@ -114,6 +114,9 @@ const app = {
                 }
             })
         }
+        handleHighlightText()
+        searchInput.oninput = handleHighlightText
+
 
         // Submit add form
         const addForm = $('.add-form')
