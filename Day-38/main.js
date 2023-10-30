@@ -106,7 +106,7 @@ const app = {
                     if(inputValue != '') {
                         const replaceIndex = todoTitle.innerText.toLowerCase().match(inputValue.toLowerCase()).index
                         const replaceText = todoTitle.innerText.slice(replaceIndex, replaceIndex + inputValue.length)
-                        todoTitle.innerHTML = todoTitle.innerText.replaceAll(replaceText, `<span class="highlight">${replaceText}</span>`)
+                        todoTitle.innerHTML = todoTitle.innerText.replace(replaceText, `<span class="highlight">${replaceText}</span>`)
                     }else {
                         todoTitle.innerHTML = todoTitle.innerText.replaceAll('<span class="highlight">', '').replaceAll('</span>', '')
                     }
