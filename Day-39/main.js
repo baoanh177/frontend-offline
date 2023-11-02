@@ -13,7 +13,7 @@ const app = {
                         <div class="avatar">
                             <img src="https://files.fullstack.edu.vn/f8-prod/user_photos/271546/63839d69bdaed.jpg" alt="">
                         </div>
-                        <div class="author-name">${blog.username}</div>
+                        <div class="author-name">${blog.username + ` - <strong>${this.query._page}</strong>`}</div>
                     </div>
                 </div>
                 <div class="content">
@@ -46,9 +46,7 @@ const app = {
                 if(this.query._page < this.totalPage) {
                     this.query._page++
                     document.querySelector('b').innerHTML = `<div class="custom-loader"></div>`
-                    setTimeout(() => {
                         this.getBlogs(this.query)
-                    }, 1000)
                     window.removeEventListener('scroll', handleScroll)
                 }else {
                     document.querySelector('b').innerHTML = '--- Hết Blog ---'
@@ -72,7 +70,10 @@ const app = {
             _limit: config.PAGE_LIMIT,
             _page: 1
         })
-        client.get('/blogs').then(response => this.totalPage = Math.ceil(response.data.length / config.PAGE_LIMIT))
+        client.get('/blogs')
+            .then(response => 
+                this.totalPage = Math.ceil(response.data.length / config.PAGE_LIMIT)
+            )
         this.getBlogs(this.query)
     }
 }

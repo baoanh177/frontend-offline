@@ -204,11 +204,11 @@ body {
     cursor: pointer;
 }
 
-.menu .tab:not(.home):hover {
+.menu .tab:not(.blogs-tab):hover {
     background-color: #f5f5f5;
 }
 
-.sidebar .home {
+.sidebar .blogs-tab {
     background-color: #e8ebed;
 }
 
