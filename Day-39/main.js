@@ -74,7 +74,7 @@ const app = {
             .then(response => 
                 this.totalPage = Math.ceil(response.data.length / config.PAGE_LIMIT)
             )
-        this.getBlogs(this.query)
+        this.getBlogs(this.query).then(() => blogsElement.querySelector('.custom-loader').style.display = 'none')
     }
 }
 
