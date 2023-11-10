@@ -88,6 +88,7 @@ const app = {
             access_token: resData.data.accessToken,
             refresh_token: resData.data.refreshToken
         }))
+        loginModal.disabled(false)
         this.checkAuth()
         this.handleCloseModal(null, loginModal)
         showToast(message)
@@ -222,6 +223,7 @@ const app = {
             const email = loginModal.querySelector('.email').value
             const password = loginModal.querySelector('.password').value
             
+            loginModal.disabled(true)
             const res = handleValidate(loginModal)
             if(res.isValid) {
                 this.login({ email, password })
@@ -232,7 +234,6 @@ const app = {
                     type: "FAILED"
                 })
             }
-            loginModal.querySelector("button").disabled = true
             this.checkAuth()
         })
 
