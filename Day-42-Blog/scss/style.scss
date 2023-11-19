@@ -74,11 +74,17 @@ body {
             display: flex;
             gap: 20px;
             > div {
+                text-align: center;
+                // height: 40px;
+                min-width: 70px;
                 padding: 5px 10px;
                 border-radius: 99px;
                 border: 1px solid green;
                 color: green;
                 cursor: pointer;
+            }
+            .detail-blog {
+                min-width: 200px;
             }
         }
     }

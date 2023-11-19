@@ -81,11 +81,16 @@ body {
   gap: 20px;
 }
 .blog .head .more > div {
+  text-align: center;
+  min-width: 70px;
   padding: 5px 10px;
   border-radius: 99px;
   border: 1px solid green;
   color: green;
   cursor: pointer;
+}
+.blog .head .more .detail-blog {
+  min-width: 200px;
 }
 .blog .blog-content {
   margin-top: 10px;

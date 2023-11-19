@@ -101,10 +101,28 @@ const app = {
                         <label for="exampleInputPassword1">Content</label>
                         <textarea name="content" class="form-control" cols="30" rows="5" placeholder="Content"></textarea>
                     </div>
+                    <div class="form-group">
+                        <label for="">Set time to Post</label>
+                        <input type="date" class="form-control date" placeholder="Date">
+                    </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
         `
+    },
+    handlePostDate(date) {
+        const postDate = new Date(date)
+        const now = new Date()
+        const seconds = Math.floor((now - postDate) / 1000)
+        const minutes = Math.floor(seconds / 60)
+        const hours = Math.floor(minutes / 60)
+        const days = Math.floor(hours / 24)
+
+        return days > 0 && `${days} ngày trước - ${postDate.getHours()} giờ ${postDate.getMinutes()} phút`
+            || hours > 0 && `${hours} giờ trước - ${postDate.getHours()} giờ ${postDate.getMinutes()} phút`
+            || minutes > 0 && `${minutes} phút trước - ${postDate.getHours()} giờ ${postDate.getMinutes()} phút`
+            || seconds > 0 && `${seconds} giây trước - ${postDate.getHours()} giờ ${postDate.getMinutes()} phút`
+            || "Vừa xong"
     },
     render() {
         root.innerHTML = this.home()
@@ -121,7 +139,7 @@ const app = {
                         <span class="username">${blog.userId.name}</span>
                     </div>
                     <div class="more">
-                        <div class="detail-blog"># view more ${blog.content.split(" ").at(0)}...</div>
+                        <div class="detail-blog"># view more ${blog.content.slice(0, 10)}...</div>
                         <div class="user-blog">${blog.userId.name}</div>
                     </div>
                 </div>
@@ -130,7 +148,7 @@ const app = {
                     <div class="content">${blog.content}</div>
                 </div>
                 <div class="foot">
-                    <div class="created-at">1 ngày trước</div>
+                    <div class="created-at">${this.handlePostDate(blog.timeUp)}</div>
                     <div class="read-time">
                         Khoảng
                         ${blog.content.split(' ').length / 60 > 1 
@@ -175,7 +193,11 @@ const app = {
             }else if(e.target.classList.contains("blog-form")) {
                 const data = validate(e.target)
                 if(data) {
-                    this.postBlog(data).then(() => this.clearForm(e.target))
+                    if(typeof data.postDate == "undefined") {
+                        this.postBlog(data).then(() => this.clearForm(e.target))
+                    }else if(typeof data.postDate == "string") {
+                        this.clearForm(e.target)
+                    }
                 }
             }
         })
