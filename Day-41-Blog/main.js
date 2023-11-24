@@ -265,7 +265,8 @@ const app = {
         if (queryString) {
             queryString = "?" + queryString
         }
-        const {data: blogs} = await client.get('/blogs' + queryString)
+        const {data: blogs, response} = await client.get('/blogs' + queryString)
+        console.log(response)
         this.blogs = blogs.data
         this.render(blogs.data)
     },
@@ -305,40 +306,23 @@ const app = {
             `
         }
     },
-    async handleRefreshToken(refreshToken) {
-        const {data: resData, response} = await client.post("/auth/refresh-token", {
-            refreshToken: refreshToken
-        })
-
-        console.log({resData, response})
-        if(response.ok) {
-            localStorage.setItem("tokens", JSON.stringify(resData.data.token))
-        }else {
-            console.log("Không set được token")
-        }
-
-    },
     async checkAuth() {
         if(localStorage.getItem("tokens")) {
             try{
                 
-                const {access_token: accessToken, refresh_token: refreshToken} = JSON.parse(localStorage.getItem('tokens'))
+                const {accessToken, refreshToken} = JSON.parse(localStorage.getItem('tokens'))
                 if(!accessToken) {
                     throw new Error("Access Token Not Exists")
                 }
                 client.setToken(accessToken)
                 
-                
                 const {data: resData, response} = await client.get("/users/profile")
-                if(response.status == 401) {
-                    this.handleRefreshToken(refreshToken)
-                }
                 if(!response.ok) {
                     this.isLogin = false
                     return
                 }
                 this.isLogin = true
-                this.showProfile(resData.data.name)
+                this.showProfile(name)
             }catch(e) {
                 console.log(e)
             }
@@ -354,8 +338,6 @@ const app = {
             _page: 1
         })
 
-        // Sao response.headers.get("x-total-count") đoạn này nó lại ra null nhỉ
-        // Cả đoạn await bên trên cũng vậy
         client.get('/blogs')
             .then(response => 
                 this.totalPage = Math.ceil(response.data.length / config.PAGE_LIMIT)

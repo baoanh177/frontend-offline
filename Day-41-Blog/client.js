@@ -1,5 +1,6 @@
 import { config } from "./config.js"
 const { SERVER_API } = config
+import { requestRefresh } from "./utils.js"
 
 export const client = {
     serverApi: SERVER_API,
@@ -10,8 +11,8 @@ export const client = {
     setUrl: function(url) {
         this.serverApi = url
     },
-    send: async function (url, method = "GET", body = null) {
-        url = `${this.serverApi}${url}`
+    send: async function (path, method = "GET", body = null) {
+        const url = `${this.serverApi}${path}`
         //Tác vụ call api
         const headers = {
             "Content-Type": "application/json"
@@ -28,6 +29,14 @@ export const client = {
         }
         try {
             const response = await fetch(url, options)
+            if(!response.ok) {
+                const newToken = await requestRefresh(this)
+
+                if(newToken) {
+                    this.token = newToken.accessToken;
+                    return this.send(path, method, body)
+                }
+            }
             const data = await response.json()
             return { response, data }
         } catch (e) {

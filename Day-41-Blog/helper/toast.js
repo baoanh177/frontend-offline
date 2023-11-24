@@ -31,12 +31,5 @@ export default function showToast({
         const autoRemoveId = setTimeout(function() {
             main.removeChild(toast)
         }, duration + 1000)
-
-        // main.onclick = function(e) {
-        //     if(e.target.closest('.toast__close')) {
-        //         main.removeChild(toast)
-        //         clearTimeout(autoRemoveId)
-        //     }
-        // }
     }
 }
