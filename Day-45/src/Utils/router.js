@@ -1,7 +1,7 @@
 import Navigo from "navigo"
 import Error from "../Error"
 
-const router = new Navigo("/", { linksSelector: "a" })
+const router = new Navigo("/", { linksSelector: "a", hash: true })
 const root = document.querySelector("#app")
 
 window.navigate = function(path) {
