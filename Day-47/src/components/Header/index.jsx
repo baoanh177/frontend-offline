@@ -23,13 +23,13 @@ function Header({setTodos, setLoading}) {
 
     return <header className={cl.header}>
         <h3 className={cl.title}>Todo App</h3>
-        <div className={cl.addForm}>
+        <form className={cl.addForm}>
             <input ref={inputRef} type="text" placeholder="Thêm một việc làm mới" className={cl.addInput}/>
             <button
                 className={cl.addBtn}
                 onClick={handleClick}                
             >Add</button>
-        </div>
+        </form>
     </header>;
 }
 
