@@ -56,13 +56,14 @@ function Todo({todoId, title, isCompleted, setTodos, setLoading}) {
             >Sửa</button>}
             <button
                 className={cl.deleteBtn}
-                onClick={() => deleteTodo(todoId).then(() => {
+                onClick={() => {
                     setLoading(true)
+                    deleteTodo(todoId).then(() => {
                     getTodos().then(res => {
                         setTodos(res.data.data.listTodo)
                         setLoading(false)
                     })
-                })}
+                })}}
             >Xóa</button>
         </div>
     </div>;
