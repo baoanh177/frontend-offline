@@ -17,25 +17,22 @@ function App() {
 
     useEffect(() => {
         client.setApiKey(apiKey)
+        if (apiKey) {
+            console.log(
+                `%cChào mừng ${username} đã quay trở lại`,
+                "font-size: 20px; color: green; font-weight: bold"
+            )
+            setLoading(true)
+            getTodos().then((res) => {
+                setLoading(false)
+                setTodos(res.data.data.listTodo)
+            })
+        } else {
+            const email = prompt("Please enter your email:")
+            handleAuth(email, setApiKey)
+        }
+        
     }, [apiKey])
-
-    useEffect(() => {
-        setLoading(true)
-        getTodos().then((res) => {
-            setLoading(false)
-            setTodos(res.data.data.listTodo)
-        })
-    }, [])
-
-    if (apiKey) {
-        console.log(
-            `%cChào mừng ${username} đã quay trở lại`,
-            "font-size: 20px; color: green; font-weight: bold"
-        )
-    } else {
-        const email = prompt("Please enter your email:")
-        handleAuth(email)
-    }
 
     return (
         <>
