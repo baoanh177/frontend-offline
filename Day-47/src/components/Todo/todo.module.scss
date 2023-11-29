@@ -1,0 +1,104 @@
+.todoItem {
+    .input {
+        font-size: 16px;
+        background-color: transparent;
+        width: 100%;
+        box-sizing: border-box;
+        padding-inline: 0.5em;
+        padding-block: 0.7em;
+        border: 1px solid #eee;
+        border-bottom: var(--border-height) solid
+            var(--border-before-color);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .inputBorder {
+        position: absolute;
+        background: var(--border-after-color);
+        height: 2px;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        transform: scaleX(0%);
+        transition: transform 0.3s
+            cubic-bezier(0.6, -0.28, 0.735, 0.045);
+    }
+
+    .input:focus + .inputBorder {
+        transform: scaleX(100%);
+    }
+
+    .formControl {
+        position: relative;
+        --width-of-input: 300px;
+    }
+
+    .inputAlt {
+        font-size: 1.2rem;
+        padding-inline: 1em;
+        padding-block: 0.8em;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .inputBorderAlt {
+        height: 3px;
+        background: linear-gradient(
+            90deg,
+            #ff6464 0%,
+            #ffbf59 50%,
+            #47c9ff 100%
+        );
+        transition: transform 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+    }
+
+    .inputAlt:focus + .inputBorderAlt {
+        transform: scaleX(100%);
+    }
+
+    .todoAction {
+        display: flex;
+        margin-top: 10px;
+        button {
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 17px;
+            color: #fff;
+            height: 36px;
+            min-width: 80px;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: scale 0.2s;
+            &:hover {
+                scale: 1.03;
+            }
+        }
+        .editBtn {
+            background-color: green;
+        }
+        .deleteBtn {
+            background-color: red;
+        }
+        .cancelBtn {
+            margin-left: auto;
+            background-color: orange;
+        }
+        .updateBtn {
+            background-color: skyblue;
+        }
+    }
+
+    .editLayout {
+        display: flex;
+        align-items: center;
+        flex-grow: 1;
+        .completeBox {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        input {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}

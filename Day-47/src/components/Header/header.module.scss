@@ -1,0 +1,44 @@
+.header {
+    padding: 10px;
+    color: #fff;
+    .title {
+        font-weight: bold;
+        font-size: 22px;
+        text-align: center;
+    }
+    .addForm {
+        display: flex;
+        gap: 20px;
+        width: 30%;
+        margin: 10px auto;
+        height: 50px;
+        padding-bottom: 10px;
+        border-bottom: seagreen 2px solid;
+        .addInput {
+            flex-grow: 1;
+            background-color: transparent;
+            color: #fff;
+            font-size: 18px;
+            &::placeholder {
+                font-size: 18px;
+                padding: 5px 10px;
+            }
+        }
+        .addBtn {
+            background-color: lightseagreen;
+            color: #fff;
+            border-radius: 8px;
+            height: 100%;
+            min-width: 100px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color .2s;
+            &:hover {
+                background-color: seagreen;
+                cursor: pointer;
+            }
+        }
+    }
+}
