@@ -15,29 +15,28 @@ function App() {
     const [apiKey, setApiKey] = useState(key)
     const [todos, setTodos] = useState([])
     const [loading, setLoading] = useState(false)
-
+    
     useEffect(() => {
         client.setApiKey(apiKey)
         if (apiKey) {
-            toast.success(`Chào mừng ${username} đã quay trở lại`)
             setLoading(true)
             getTodos().then((res) => {
                 setLoading(false)
+                toast.success(`Chào mừng ${username} đã quay trở lại`)
                 setTodos(res.data.data.listTodo)
             })
         } else {
             const email = prompt("Please enter your email:")
             handleAuth(email, setApiKey)
         }
-        
     }, [apiKey])
-
+    
     return (
         <>
             <div className="container">
                 <ToastContainer />
                 <Header setTodos={setTodos} setLoading={setLoading} />
-                <div className="list-todo">
+                <div className="todos">
                     {todos.map((todo) => {
                         return (
                             <Todo

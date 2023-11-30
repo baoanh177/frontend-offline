@@ -52,8 +52,11 @@ function Todo({todoId, title, isCompleted, setTodos, setLoading}) {
                             todo: todoValue,
                             isCompleted: complete
                         }).then(() => {
-                            setLoading(false)
-                            toast.success("Sửa todo thành công!")
+                            getTodos().then(res => {
+                                setTodos(res.data.data.listTodo)
+                                setLoading(false)
+                                toast.success("Sửa todo thành công!")
+                            })
                         })
                         setEditing(false)
                     }}
@@ -68,10 +71,10 @@ function Todo({todoId, title, isCompleted, setTodos, setLoading}) {
                 onClick={() => {
                     setLoading(true)
                     deleteTodo(todoId).then(() => {
-                        toast.success("Xóa todo thành công!")
                         getTodos().then(res => {
                             setTodos(res.data.data.listTodo)
                             setLoading(false)
+                            toast.success("Xóa todo thành công!")
                         })
                     })
                 }}

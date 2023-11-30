@@ -10,18 +10,16 @@ function Header({setTodos, setLoading}) {
     const handleClick = (e) => {
         e.preventDefault()
         if(inputRef.current.value.trim() == '') {
-            toast("Không được để trống")
+            toast.error("Không được để trống")
         }else if(inputRef.current.value.trim().length < 2) {
-            toast("Tối thiểu 2 kí tự")
+            toast.error("Tối thiểu 2 kí tự")
         }else {
             setLoading(true)
             addTodo({todo: inputRef.current.value.trim()}).then((res) => {
-                if(res.response.ok) {
-                    toast("Thêm todo thành công!")
-                }
                 getTodos().then(res => {
                     setTodos(res.data.data.listTodo)
                     setLoading(false)
+                    toast.success("Thêm todo thành công!")
                 })
             })
         }

@@ -38,6 +38,7 @@ img {
     margin: 30px;
     padding: 30px;
     background-color: #222;
+    border-radius: 12px;
 }
 
 .list-todo {
