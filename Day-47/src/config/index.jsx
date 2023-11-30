@@ -1,3 +1,5 @@
+import { toast } from "react-toastify"
+
 const SERVER_API = "https://api-todo-ebon.vercel.app/api/v1"
 
 export const getApiKey = async (email) => {
@@ -33,8 +35,8 @@ export const client = {
             const response = await fetch(url, options)
                 if(!response.ok) {
                     if(response.status == 401) {
-                        console.warn("Có lỗi xảy ra vui lòng reload")
-                        // localStorage.clear()
+                        toast.error("Có lỗi xảy ra vui lòng reload!")
+                        localStorage.clear()
                     }
                 }
             const data = await response.json()

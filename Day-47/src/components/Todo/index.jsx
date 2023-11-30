@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import cl from "./todo.module.scss";
 import { updateTodo, deleteTodo, getTodos } from "../../helper/handleTodo";
+import { toast } from "react-toastify";
 
 function Todo({todoId, title, isCompleted, setTodos, setLoading}) {
     const [editing, setEditing] = useState(false)
@@ -38,13 +39,21 @@ function Todo({todoId, title, isCompleted, setTodos, setLoading}) {
                     <input type="checkbox" checked={complete} onChange={handleChange}/>
                     <span>{complete ? "Completed" : "Not Completed"}</span>
                 </div>
-                <button className={cl.cancelBtn} onClick={() => setEditing(false)}>Thoát</button>
+                <button className={cl.cancelBtn} onClick={() => {
+                    setEditing(false)
+                    setComplete(isCompleted)
+                    setTodoValue(title)
+                }}>Thoát</button>
                 <button
                     className={cl.updateBtn}
                     onClick={() => {
+                        setLoading(true)
                         updateTodo(todoId, {
                             todo: todoValue,
                             isCompleted: complete
+                        }).then(() => {
+                            setLoading(false)
+                            toast.success("Sửa todo thành công!")
                         })
                         setEditing(false)
                     }}
@@ -59,11 +68,13 @@ function Todo({todoId, title, isCompleted, setTodos, setLoading}) {
                 onClick={() => {
                     setLoading(true)
                     deleteTodo(todoId).then(() => {
-                    getTodos().then(res => {
-                        setTodos(res.data.data.listTodo)
-                        setLoading(false)
+                        toast.success("Xóa todo thành công!")
+                        getTodos().then(res => {
+                            setTodos(res.data.data.listTodo)
+                            setLoading(false)
+                        })
                     })
-                })}}
+                }}
             >Xóa</button>
         </div>
     </div>;

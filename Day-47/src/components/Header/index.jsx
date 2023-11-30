@@ -1,18 +1,24 @@
 import { useRef } from "react";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { addTodo, getTodos } from "../../helper/handleTodo";
 import cl from "./header.module.scss"
 
 function Header({setTodos, setLoading}) {
     const inputRef = useRef()
 
-    const handleClick = () => {
+    const handleClick = (e) => {
+        e.preventDefault()
         if(inputRef.current.value.trim() == '') {
-            console.warn("Không được để trống")
+            toast("Không được để trống")
         }else if(inputRef.current.value.trim().length < 2) {
-            console.warn("Tối thiểu 2 kí tự")
+            toast("Tối thiểu 2 kí tự")
         }else {
             setLoading(true)
             addTodo({todo: inputRef.current.value.trim()}).then((res) => {
+                if(res.response.ok) {
+                    toast("Thêm todo thành công!")
+                }
                 getTodos().then(res => {
                     setTodos(res.data.data.listTodo)
                     setLoading(false)

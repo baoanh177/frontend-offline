@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { ToastContainer, toast } from "react-toastify"
 import { handleAuth } from "./helper/handleAuth"
 import { client } from "./config"
 import { getTodos } from "./helper/handleTodo"
@@ -18,10 +19,7 @@ function App() {
     useEffect(() => {
         client.setApiKey(apiKey)
         if (apiKey) {
-            console.log(
-                `%cChào mừng ${username} đã quay trở lại`,
-                "font-size: 20px; color: green; font-weight: bold"
-            )
+            toast.success(`Chào mừng ${username} đã quay trở lại`)
             setLoading(true)
             getTodos().then((res) => {
                 setLoading(false)
@@ -37,6 +35,7 @@ function App() {
     return (
         <>
             <div className="container">
+                <ToastContainer />
                 <Header setTodos={setTodos} setLoading={setLoading} />
                 <div className="list-todo">
                     {todos.map((todo) => {
