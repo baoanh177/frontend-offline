@@ -32,4 +32,12 @@ const deleteTodo = async (id) => {
     return {response, data}
 }
 
-export { getTodos, addTodo, updateTodo, deleteTodo }
+const searchTodo = async (value) => {
+    const {response, data} = await client.get("/todos?q=" + value)
+    if(!response.ok) {
+        throw new Error("Can not find todo!")
+    }
+    return {response, data}
+}
+
+export { getTodos, addTodo, updateTodo, deleteTodo, searchTodo }

@@ -34,6 +34,13 @@ img {
 
 /* ///////////     END-RESET      ///////////// */
 
+.empty {
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
 .container {
     margin: 30px;
     padding: 30px;

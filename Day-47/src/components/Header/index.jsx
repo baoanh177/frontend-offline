@@ -1,38 +1,75 @@
-import { useRef } from "react";
+import { useEffect, useState } from "react";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { addTodo, getTodos } from "../../helper/handleTodo";
+import { addTodo, getTodos, searchTodo } from "../../helper/handleTodo";
 import cl from "./header.module.scss"
 
 function Header({setTodos, setLoading}) {
-    const inputRef = useRef()
+    const [searchMode, setSearchMode] = useState(false)
+    const [inputValue, setInputValue] = useState('')
+
+    const handleChange = e => {
+        setInputValue(e.target.value)
+    }
 
     const handleClick = (e) => {
         e.preventDefault()
-        if(inputRef.current.value.trim() == '') {
-            toast.error("Không được để trống")
-        }else if(inputRef.current.value.trim().length < 2) {
-            toast.error("Tối thiểu 2 kí tự")
+        if(searchMode) {
+            toast.warn("Tắt chế độ tìm kiếm để thêm công việc!")
         }else {
-            setLoading(true)
-            addTodo({todo: inputRef.current.value.trim()}).then((res) => {
-                getTodos().then(res => {
-                    setTodos(res.data.data.listTodo)
-                    setLoading(false)
-                    toast.success("Thêm todo thành công!")
+            if(inputValue.trim() == '') {
+                toast.error("Không được để trống")
+            }else if(inputValue.trim().length < 2) {
+                toast.error("Tối thiểu 2 kí tự")
+            }else {
+                setLoading(true)
+                addTodo({todo: inputValue.trim()}).then(() => {
+                    getTodos().then(res => {
+                        setTodos(res.data.data.listTodo)
+                        setInputValue('')
+                        setLoading(false)
+                        toast.success("Thêm todo thành công!")
+                    })
                 })
-            })
+            }
         }
     }
+
+    useEffect(() => {
+        if(searchMode) {
+            const delayInputTimeoutId = setTimeout(() => {
+                setLoading(true)
+                searchTodo(inputValue.trim().replaceAll(" ", '+')).then(res => {
+                    setTodos(res.data.data.listTodo)
+                    setLoading(false)
+                })
+            }, 500)
+            return () => clearTimeout(delayInputTimeoutId)
+        }
+    }, [inputValue, 500])
 
     return <header className={cl.header}>
         <h3 className={cl.title}>Todo App</h3>
         <form className={cl.addForm}>
-            <input ref={inputRef} type="text" placeholder="Thêm một việc làm mới" className={cl.addInput}/>
+            <input
+                value={inputValue}
+                type="text" 
+                placeholder={searchMode ? "Tìm kiếm công việc" : "Thêm một việc làm mới"} 
+                className={cl.addInput}
+                onChange={handleChange}
+            />
             <button
                 className={cl.addBtn}
                 onClick={handleClick}                
             >Add</button>
+            <div
+                className={cl.searchBtn}
+                onClick={() => {
+                    setInputValue('')
+                    setSearchMode(!searchMode)
+                    toast.info(searchMode ? "Đã tắt chế độ tìm kiếm" : "Đã bật chế độ tìm kiếm")
+                }}
+            >Search</div>
         </form>
     </header>;
 }

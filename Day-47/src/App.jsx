@@ -37,6 +37,7 @@ function App() {
                 <ToastContainer />
                 <Header setTodos={setTodos} setLoading={setLoading} />
                 <div className="todos">
+                    {todos.length == 0 && <div className="empty">Không có công việc</div>}
                     {todos.map((todo) => {
                         return (
                             <Todo
