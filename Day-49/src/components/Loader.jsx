@@ -1,0 +1,15 @@
+function Loader() {
+    return (
+        <div id="page">
+            <div id="container">
+                <div id="ring"></div>
+                <div id="ring"></div>
+                <div id="ring"></div>
+                <div id="ring"></div>
+                <div id="h3">Chờ tý...</div>
+            </div>
+        </div>
+    )
+}
+
+export default Loader
