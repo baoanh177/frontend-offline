@@ -12,7 +12,6 @@ export const getApiKey = async (email) => {
 export const client = {
     serverApi: SERVER_API,
     apiKey: null,
-    isLogin: false,
     setApiKey(apiKey) {
         this.apiKey = apiKey
     },
@@ -37,10 +36,10 @@ export const client = {
             const response = await fetch(url, options)
             if (!response.ok) {
                 if (response.status == 401) {
-                    toast.error("Có lỗi xảy ra vui lòng đăng nhập lại!")
-                    this.isLogin = false
-                    localStorage.removeItem("userEmail")
-                    localStorage.removeItem("apiKey")
+                    toast.error("Có lỗi xảy ra! Click here to đăng nhập lại", {
+                        onClick: () => location.reload()
+                    })
+                    localStorage.clear()
                 }
             }
             const data = await response.json()

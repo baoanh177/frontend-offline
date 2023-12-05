@@ -23,7 +23,7 @@ function Home() {
     }, [])
     return <>
         <ProductList products={products} cart={cart} setCart={setCart} />
-        <Cart cart={cart} setCart={setCart} />
+        <Cart cart={cart} setCart={setCart} products={products} setProducts={setProducts} />
     </>
 }
 

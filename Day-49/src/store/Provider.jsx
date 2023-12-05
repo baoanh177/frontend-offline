@@ -10,10 +10,9 @@ function Provider({ children }) {
     useEffect(() => client.setApiKey(apiKey), [apiKey])
     useEffect(() => {
         if(apiKey) {
-            client.isLogin = true
+            setLogin(true)
         }
-        setLogin(client.isLogin)
-    }, [client.isLogin])
+    }, [])
 
     return (
         <GlobalContext.Provider

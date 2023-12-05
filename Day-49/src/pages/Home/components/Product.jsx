@@ -1,9 +1,11 @@
+import { toast } from "react-toastify"
+
 function Product({ _id, name, price, image, quantity, cart, setCart }) {
 
     const handleAddToCart = id => {
         if(cart.length == 0) {
             const product = {
-                productId: _id,
+                productId: id,
                 name,
                 price,
                 quantity: 1,
@@ -24,7 +26,7 @@ function Product({ _id, name, price, image, quantity, cart, setCart }) {
             }
             if(!isExist) {
                 const product = {
-                    productId: _id,
+                    productId: id,
                     name,
                     price,
                     quantity: 1,
@@ -33,6 +35,7 @@ function Product({ _id, name, price, image, quantity, cart, setCart }) {
                 setCart([...cart, product])
             }
         }
+        toast.success("Đã thêm một sản phẩm vào giỏ hàng")
     }
 
     return (

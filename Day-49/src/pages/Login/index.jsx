@@ -1,11 +1,11 @@
 import { useContext, useState } from "react"
-import { client, getApiKey } from "../../config/client"
+import { getApiKey } from "../../config/client"
 import { GlobalContext } from "../../store/Provider"
 import cl from "./login.module.scss"
 import { toast } from "react-toastify"
 
 function Login() {
-    const { setLoading } = useContext(GlobalContext)
+    const { setLoading, setLogin } = useContext(GlobalContext)
     const [inputValue, setInputValue] = useState('')
 
     const handleChange = e => {
@@ -24,7 +24,7 @@ function Login() {
             }
             localStorage.setItem("apiKey", JSON.stringify(res.data.data.apiKey))
             localStorage.setItem("userEmail", JSON.stringify(inputValue))
-            client.isLogin = true
+            setLogin(true)
             setLoading(false)
             setInputValue('')
         })
