@@ -24,6 +24,8 @@ function Cart({cart, setCart, products, setProducts}) {
                 }
             }
             if(isValid) {
+                const apiKey = JSON.parse(localStorage.getItem("apiKey"))
+                client.setApiKey(apiKey)
                 setLoading(true)
                 client.post("/orders", cartProducts).then(res => {
                     if(res.response.ok) {
