@@ -42,12 +42,12 @@ function Form({ user, logout, setLoading }) {
     
             emailjs.send('baoanh', 'template_km7pvr1', data, "aN2weeejpVkzQCv4K")
                 .then(function(response) {
-                   toast.success("Gửi email thành công")
+                   toast.success("Gửi mail thành công")
                    messRef.current.value = user.email ?? "example@email.com"
                    messRef.current.value = "Tôi cần hỗ trợ tài chính!"
                    setLoading(false)
                 }, function(err) {
-                    toast.error("Gửi email thất bại")
+                    toast.error("Gửi mail thất bại")
                     setLoading(false)
                 });
         }
