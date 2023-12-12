@@ -37,7 +37,8 @@ function Form({ user, logout, setLoading }) {
             const data = {
                 from_name: "F88",
                 to_name: user.name,
-                message: messRef.current.value
+                message: messRef.current.value,
+                reply_to: emailRef.current.value
             }
     
             emailjs.send('baoanh', 'template_km7pvr1', data, "aN2weeejpVkzQCv4K")
@@ -71,7 +72,7 @@ function Form({ user, logout, setLoading }) {
                         ref={emailRef}
                         type="text"
                         id="email"
-                        name="email"
+                        name="reply_to"
                         defaultValue={user.email ?? "example@email.com"}
                     />
                 </div>
