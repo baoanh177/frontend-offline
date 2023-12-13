@@ -1,0 +1,165 @@
+.histories {
+    display: flex;
+    overflow-x: scroll;
+}
+
+.histories::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+.histories::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background: #ccc;
+}
+
+.play-history {
+    min-width: 100vw;
+    flex-grow: 1;
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+}
+
+th,
+td {
+    text-align: center;
+}
+
+th {
+    padding: 5px;
+}
+
+.row {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.delete-history-btn {
+    --color: #f00;
+    font-family: inherit;
+    display: inline-block;
+    width: 6em;
+    height: 2.6em;
+    line-height: 2.5em;
+    overflow: hidden;
+    margin: 10px 0;
+    font-size: 17px;
+    z-index: 1;
+    color: var(--color);
+    border: 2px solid var(--color);
+    border-radius: 6px;
+    position: relative;
+    cursor: pointer;
+}
+
+.delete-history-btn::before {
+    position: absolute;
+    content: "";
+    background: var(--color);
+    width: 150px;
+    height: 200px;
+    z-index: -1;
+    border-radius: 50%;
+}
+
+.delete-history-btn:hover {
+    color: white;
+}
+
+.delete-history-btn:before {
+    top: 100%;
+    left: 100%;
+    transition: 0.3s all;
+}
+
+.delete-history-btn:hover::before {
+    top: -30px;
+    left: -30px;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background-color: #00000080;
+    z-index: 88;
+}
+
+.card {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: fit-content;
+    background: rgb(255, 255, 255);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.068);
+    z-index: 99;
+}
+.card-content {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.card-heading {
+    font-size: 20px;
+    font-weight: 700;
+    color: rgb(27, 27, 27);
+}
+.card-description {
+    font-weight: 100;
+    color: rgb(102, 102, 102);
+}
+.card-button-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.card-button {
+    width: 50%;
+    height: 35px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+.primary {
+    background-color: rgb(255, 114, 109);
+    color: white;
+}
+.primary:hover {
+    background-color: rgb(255, 73, 66);
+}
+.secondary {
+    background-color: #ddd;
+}
+.secondary:hover {
+    background-color: rgb(197, 197, 197);
+}
+.exit-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+.exit-button:hover svg {
+    fill: black;
+}
+.exit-button svg {
+    fill: rgb(175, 175, 175);
+}

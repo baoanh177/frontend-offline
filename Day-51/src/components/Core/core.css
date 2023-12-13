@@ -1,0 +1,104 @@
+
+.number-range > *:not(.range) {
+    font-size: 30px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.number-range .range {
+    margin-top: 20px;
+    height: 7px;
+    width: 100%;
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+.number-range .range:hover .progress .dot {
+    width: 12px;
+    height: 12px;
+    outline: 2px solid var(--primary-color);
+}
+
+.number-range .range .progress {
+    height: 100%;
+    width: 50%;
+    position: relative;
+    background-color: var(--primary-color);
+}
+
+.number-range .range .progress .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(50%, -50%);
+}
+
+.number-range .range:hover .current-number {
+    display: flex;
+}
+
+.number-range .current-number {
+    width: 50px;
+    height: 25px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 200%;
+    right: 0;
+    transform: translateX(50%);
+    background-color: var(--primary-color);
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    display: none;
+}
+
+.flags {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flag:not(:last-child) {
+    transform: translateX(-50%);
+}
+
+.number-form {
+    margin: 20px 0;
+}
+
+.number-form span {
+    font-size: 14px;
+    color: var(--primary-color);
+}
+
+.number-form .input {
+    margin-top: 10px;
+    height: 30px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid var(--primary-color);
+    outline: none;
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    padding: 0 5px;
+}
+
+.restart-btn {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 32px;
+    width: 80px;
+    border: 1px solid #ccc;
+    color: blue;
+    background-color: var(--primary-color);
+    border-radius: 6px;
+    cursor: pointer;
+}
