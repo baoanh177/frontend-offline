@@ -10,7 +10,7 @@ function Home() {
     const [loading, setLoading] = useState(false)
     const [products, setProducts] = useState([])
     const [currentPage, setCurrentPage] = useState(1);
-    const [totalPage, setTotalPage] = useState(10)
+    const [totalPage, setTotalPage] = useState(1)
 
     useEffect(() => {
         setLoading(true)
