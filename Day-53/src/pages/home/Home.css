@@ -1,0 +1,44 @@
+.add-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 300px;
+    border-radius: 12px;
+    padding: 8px 20px;
+    background-color: #222;
+}
+
+.add-form input {
+    width: 100%;
+    height: 30px;
+    border-radius: 8px;
+    background-color: #333;
+    border: 2px solid lightseagreen;
+    color: #fff;
+    padding: 0 10px;
+}
+
+.add-form .row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.add-form button {
+    width: 100px;
+    height: 28px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    background-color: lightseagreen;
+    color: #fff;
+    transition: background-color 0.2s;
+}
+
+.add-form button:hover {
+    background-color: seagreen;
+    cursor: pointer;
+}
+
+.add-form i {
+    cursor: pointer;
+}
