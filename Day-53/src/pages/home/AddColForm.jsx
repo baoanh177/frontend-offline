@@ -2,10 +2,10 @@ import { useState } from "react"
 import { useDispatch } from "react-redux"
 import { dataSlice } from "../../redux/slices/dataSlice.js"
 import { getRandomId } from "../../helpers/getRandomId.js"
-
 const { addColumn } = dataSlice.actions
 
 function AddColForm() {
+    
     const [adding, setAdding] = useState(false)
     const dispatch = useDispatch()
 
@@ -16,10 +16,11 @@ function AddColForm() {
         if(data.name.trim() == '') {
             setAdding(false)
         }else {
-            dispatch(addColumn({
-                colId: getRandomId(),
-                name: data.name
-            }))
+            dispatch(addColumn([{
+                content: "",
+                columnName: data.name,
+                column: getRandomId()
+            }]))
             setAdding(false)
         }
     }
@@ -30,7 +31,7 @@ function AddColForm() {
                 <input type="text" name="name" autoFocus placeholder="Nhập tiêu đề..."/>
                 <div className="row">
                     <button>Add</button>
-                    <i className="fa-solid fa-xmark" style={{color: '#fff'}} onClick={() => setAdding(false)}></i>
+                    <i className="fa-solid fa-xmark" onClick={() => setAdding(false)}></i>
                 </div>
             </form>
             :

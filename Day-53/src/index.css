@@ -44,8 +44,8 @@ body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont,
         "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
         "Helvetica Neue", sans-serif;
-    background-color: #8EC5FC;
-    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
     min-height: 100vh;
 }
 
@@ -63,10 +63,10 @@ body {
 .trello-box {
     position: relative;
     width: 300px;
-    background-color: #000;
+    background-color: #eee;
     border-radius: 14px;
-    color: #fff;
     padding: 50px 20px;
+    overflow: hidden;
 }
 
 .heading {
@@ -100,7 +100,7 @@ body {
 }
 
 .delete-icon:hover {
-    background-color: #ffffff40;
+    background-color: #fff;
 }
 
 .foot {
@@ -119,12 +119,13 @@ body {
 }
 
 .foot:hover {
-    background-color: #ffffff30;
+    background-color: #fff;
 }
 
 .task-box {
     display: flex;
-    background-color: #ffffff40;
+    background-color: #fff;
+    box-shadow: 0 0 2px 0 #ccc;
     border-radius: 8px;
     cursor: pointer;
     padding: 10px;
@@ -132,9 +133,17 @@ body {
     max-height: 80px;
 }
 
+.task-box .content {
+    max-width: 100%;
+    overflow-y: scroll;
+    word-wrap: break-word;
+}
+
 .delete {
-    display: none;
+    display: flex;
+    align-items: center;
     margin-left: auto;
+    visibility: hidden;
 }
 
 .task-box:hover {
@@ -146,7 +155,7 @@ body {
 }
 
 .task-box:hover .delete {
-    display: block;
+    visibility: visible;
 }
 
 .add-new-box {
@@ -171,12 +180,17 @@ body {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    overflow-y: scroll;
+    max-height: 500px;
+    overflow-x: hidden;
+    z-index: 99;
+    padding: 5px;
 }
 
 .task-input {
     min-height: 80px;
     word-break: break-all;
-    color: #fff;
+    color: #000;
     width: 100%;
     cursor: text;
 }

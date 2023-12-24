@@ -10,7 +10,7 @@ function TaskInput({ onAdding, column, columnName }) {
     const handleSubmit = () => {
         const value = inputRef.current.value.trim()
         if(value != '') {
-            dispatch(addTask([{content: value, columnName: columnName, column: column }]))
+            dispatch(addTask({column, content: value}))
         }
         onAdding(false)
     }

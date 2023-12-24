@@ -10,6 +10,7 @@ function App() {
     const apiKey = JSON.parse(localStorage.getItem('apiKey'))
     const loading = useSelector(state => state.data.isLoading)
     const [isLogin, setLogin] = useState(false)
+    const [isLoading, setLoading] = useState(false)
 
     useEffect(() => {
         if(apiKey) {
@@ -19,8 +20,8 @@ function App() {
 
     return <>
         <ToastContainer />
-        {loading && <Loader />}
-        {isLogin ? <Home /> : <Login onLogin={setLogin} />}
+        {(loading || isLoading) && <Loader />}
+        {isLogin ? <Home /> : <Login onLogin={setLogin} setLoading={setLoading} />}
     </>
 }
 

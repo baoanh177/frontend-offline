@@ -1,5 +1,17 @@
 import { toast } from "react-toastify"
 
+export const getApiKey = async (email) => {
+    const response = await fetch("https://api-exercise-trello.vercel.app/api/v1/api-key?email=" + email)
+    const data = await response.json()
+
+    if(!response.ok) {
+        toast.error("Email không tồn tại trong dữ liệu!")
+        return
+    }
+
+    return { response, data }
+}
+
 export const client = {
     api: "https://api-exercise-trello.vercel.app/api/v1",
     apiKey: null,
@@ -30,11 +42,10 @@ export const client = {
 
         if(!response.ok) {
             if(response.status === 401) {
-                toast.error("Có lỗi xảy ra! Click here to đăng nhập lại!", {
-                    onClick: () => {
-                        localStorage.removeItem('apiKey')
-                        location.reload()
-                    }
+                toast.error("Có lỗi xảy ra, vui lòng đăng nhập lại!")
+                setTimeout(() => {
+                    localStorage.removeItem('apiKey')
+                    location.reload()
                 })
             }
         }

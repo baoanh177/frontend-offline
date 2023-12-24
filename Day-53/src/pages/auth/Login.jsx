@@ -1,9 +1,9 @@
 import { toast } from "react-toastify"
 import "./Login.css"
-import { client } from "../../utils/client"
+import { client, getApiKey } from "../../utils/client"
 
 
-function Login({ onLogin }) {
+function Login({ onLogin, setLoading }) {
 
     const handleSubmit = e => {
         e.preventDefault()
@@ -14,12 +14,15 @@ function Login({ onLogin }) {
         }else if(!emailPattern.test(data.email)) {
             toast.error("Email không hợp lệ!")
         }else {
-            client.get("/api-key?email=" + data.email).then(res => {
-                if(res.response.ok) {
+            setLoading(true)
+            client.setApiKey(null)
+            getApiKey(data.email).then(res => {
+                if(res?.response.ok) {
                     toast.success("Đăng nhập thành công")
                     localStorage.setItem('apiKey', JSON.stringify(res.data.data.apiKey))
                     onLogin(true)
                 }
+                setLoading(false)
             })
         }
     }

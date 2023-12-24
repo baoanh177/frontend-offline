@@ -1,16 +1,33 @@
-import { useState, useRef } from "react"
+import { useState, useRef, memo } from "react"
 import { useDispatch } from "react-redux"
 import { dataSlice } from "../../redux/slices/dataSlice"
+import { useSortable } from '@dnd-kit/sortable';
+import { CSS } from '@dnd-kit/utilities';
 
-const { deleteTask } = dataSlice.actions
+const { deleteTask, editTask } = dataSlice.actions
 
-function TrelloTask({ content, _id }) {
+function TrelloTask({ task }) {
+    const { content, _id } = task
     const [editing, setEditing] = useState(false)
     const dispatch = useDispatch()
     const inputRef = useRef()
 
+    const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id: _id, data: task })
+    
+    const dndKitTaskStyles = {
+        transform: CSS.Translate.toString(transform),
+        transition,
+    }
+
     const handleSubmit = e => {
-        e.preventDefault()
+        if(inputRef.current.value.trim() != '') {
+            dispatch(editTask({
+                id: _id,
+                content: inputRef.current.value
+            }))
+        }else {
+            handleDelete()
+        }
         setEditing(false)
     }
 
@@ -28,7 +45,9 @@ function TrelloTask({ content, _id }) {
                 defaultValue={content}
                 onBlur={handleSubmit}
             ></textarea> :
-            <div className="task-box" onDoubleClick={() => setEditing(true)}>
+            <div className="task-box" onDoubleClick={() => setEditing(true)}
+                ref={setNodeRef} style={dndKitTaskStyles} {...attributes} {...listeners}
+            >
                 <div className="content">{content}</div>
                 <div className="delete">
                     <i
@@ -42,4 +61,4 @@ function TrelloTask({ content, _id }) {
     </>
 }
 
-export default TrelloTask
+export default memo(TrelloTask)
