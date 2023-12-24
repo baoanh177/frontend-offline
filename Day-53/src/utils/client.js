@@ -46,7 +46,7 @@ export const client = {
                 setTimeout(() => {
                     localStorage.removeItem('apiKey')
                     location.reload()
-                })
+                }, 4000)
             }
         }
 

@@ -43,8 +43,8 @@ export const asyncData = async data => {
         client.post('/tasks', newData),
         {
           pending: 'Đang đồng bộ dữ liệu...',
-          success: 'Dữ liệu đã được đồng bộ 👌',
-          error: 'Dữ liệu chưa được đồng bộ 🤯'
+          success: 'Dữ liệu đã được đồng bộ 🤩',
+          error: 'Dữ liệu chưa được đồng bộ 😕'
         }
     )
 
