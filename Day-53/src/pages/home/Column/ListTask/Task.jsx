@@ -1,38 +1,45 @@
 import { useState, useRef, memo } from "react"
 import { useDispatch } from "react-redux"
-import { dataSlice } from "../../redux/slices/dataSlice"
+import { dataSlice } from "../../../../redux/slices/dataSlice"
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 
 const { deleteTask, editTask } = dataSlice.actions
 
-function TrelloTask({ task }) {
-    const { content, _id } = task
+function Task({ task }) {
+    // console.log("Task render")
+    const { content, key } = task
     const [editing, setEditing] = useState(false)
     const dispatch = useDispatch()
     const inputRef = useRef()
 
-    const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id: _id, data: task })
-    
+    const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
+        id: key,
+        data: task
+    })
+
     const dndKitTaskStyles = {
+        touchAction: 'none',
         transform: CSS.Translate.toString(transform),
         transition,
+        opacity: isDragging ? 0.5 : undefined,
+        border: isDragging ? '1px solid lightseagreen' : undefined
     }
 
     const handleSubmit = e => {
+        setEditing(false)
         if(inputRef.current.value.trim() != '') {
             dispatch(editTask({
-                id: _id,
+                key,
                 content: inputRef.current.value
             }))
         }else {
             handleDelete()
         }
-        setEditing(false)
     }
 
     const handleDelete = () => {
-        dispatch(deleteTask(_id))
+        dispatch(deleteTask(key))
     }
 
     return <>
@@ -44,11 +51,12 @@ function TrelloTask({ task }) {
                 autoFocus
                 defaultValue={content}
                 onBlur={handleSubmit}
-            ></textarea> :
-            <div className="task-box" onDoubleClick={() => setEditing(true)}
+            ></textarea>
+            :
+            <div className="task-box"
                 ref={setNodeRef} style={dndKitTaskStyles} {...attributes} {...listeners}
             >
-                <div className="content">{content}</div>
+                <div className="content" onDoubleClick={() => setEditing(true)}>{content}</div>
                 <div className="delete">
                     <i
                         onClick={handleDelete}
@@ -61,4 +69,4 @@ function TrelloTask({ task }) {
     </>
 }
 
-export default memo(TrelloTask)
+export default memo(Task)

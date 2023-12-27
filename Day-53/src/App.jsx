@@ -1,10 +1,11 @@
-import Home from "./pages/home"
-import Login from "./pages/auth/Login"
+import { useEffect, useState } from "react"
+import { useSelector } from "react-redux"
 import { ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.min.css"
-import { useEffect, useState } from "react"
+
+import Home from "./pages/home"
+import Login from "./pages/auth/Login"
 import Loader from "./components/Loader"
-import { useSelector } from "react-redux"
 
 function App() {
     const apiKey = JSON.parse(localStorage.getItem('apiKey'))

@@ -1,7 +1,7 @@
 const getRandomId = () => {
     let id = ''
-    const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
-    for(let i=0; i<=10; ++i) {
+    const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrs_-tuvwxyz0123456789"
+    for(let i=0; i<=20; ++i) {
        const ranIndex = Math.floor(Math.random() * characters.length)
        id += characters[ranIndex]
     }

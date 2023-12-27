@@ -1,11 +1,10 @@
 import { useState } from "react"
 import { useDispatch } from "react-redux"
-import { dataSlice } from "../../redux/slices/dataSlice.js"
-import { getRandomId } from "../../helpers/getRandomId.js"
+import { dataSlice } from "../../../redux/slices/dataSlice.js"
+import { getRandomId } from "../../../helpers/getRandomId.js"
 const { addColumn } = dataSlice.actions
 
 function AddColForm() {
-    
     const [adding, setAdding] = useState(false)
     const dispatch = useDispatch()
 

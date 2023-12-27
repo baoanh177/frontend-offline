@@ -1,16 +1,17 @@
-import { useEffect, useRef } from "react"
+import { useRef } from "react"
 import { useDispatch } from "react-redux"
-import { dataSlice } from "../../redux/slices/dataSlice"
+import { dataSlice } from "../../../../redux/slices/dataSlice"
+import { getRandomId } from "../../../../helpers/getRandomId"
 const { addTask } = dataSlice.actions
 
-function TaskInput({ onAdding, column, columnName }) {
+function TaskInput({ onAdding, column }) {
     const inputRef = useRef()
     const dispatch = useDispatch()
 
     const handleSubmit = () => {
         const value = inputRef.current.value.trim()
         if(value != '') {
-            dispatch(addTask({column, content: value}))
+            dispatch(addTask({column, content: value, key: getRandomId()}))
         }
         onAdding(false)
     }

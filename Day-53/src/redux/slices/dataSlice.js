@@ -3,6 +3,7 @@ import { current } from "@reduxjs/toolkit";
 import { asyncData } from "../middlewares/dataMiddleware";
 import { getData } from "../middlewares/dataMiddleware";
 import { toast } from "react-toastify";
+import { getRandomId } from "../../helpers/getRandomId";
 
 const initialState = {
     cols: [
@@ -47,22 +48,36 @@ export const dataSlice = createSlice({
             asyncData(state)
         },
         addTask: (state, action) => {
+            console.log(action.payload)
+            console.log(current(state))
             state.tasks.push(action.payload)
             asyncData(current(state))
         },
         deleteTask: (state, action) => {
-            state.tasks = state.tasks.filter(task => task._id != action.payload)
+            state.tasks = state.tasks.filter(task => task.key != action.payload)
             asyncData(state)
         },
         editTask: (state, action) => {
             for(const task of state.tasks) {
-                if(task._id == action.payload.id) {
+                if(task.key == action.payload.key) {
                     if(task.content != action.payload.content) {
                         task.content = action.payload.content
                         asyncData(state)
                     }
                 }
             }
+        },
+        changeColumn: (state, action) => {
+            state.tasks = state.tasks.map(task => {
+                if(task.key == action.payload.taskKey) {
+                    task.column = action.payload.column
+                }
+                return task
+            })
+        },
+        orderTask: (state, action) => {
+            state.tasks = action.payload
+            asyncData(state)
         }
     },
     extraReducers: async builder => {
@@ -75,20 +90,13 @@ export const dataSlice = createSlice({
                 state.isLoading = false
                 state.cols = action.payload.data.columns
                 state.tasks = action.payload.data.tasks
+                state.tasks.forEach(task => {
+                    task.key = getRandomId()
+                })
             })
-            .addCase(getData.rejected, () => {
+            .addCase(getData.rejected, (state) => {
                 state.isLoading = false
                 toast.error("Something went wrong!")
             })
-        // builder // Add column
-        //     .addCase(addColumn.pending, (state, action) => {
-        //         state.isLoading = true
-        //         console.log(action)
-        //     })
-        //     .addCase(addColumn.fulfilled, (state, action) => {
-        //         state.isLoading = false
-        //         console.log(action)
-        //         state.cols = [...state.cols, ...action.payload.data.columns]
-        //     })
     }
 })

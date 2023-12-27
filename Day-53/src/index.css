@@ -13,9 +13,7 @@
     background-repeat: no-repeat;
     object-fit: cover;
 }
-::-webkit-scrollbar {
-    width: 0;
-}
+
 html {
     scroll-behavior: smooth;
 }
@@ -54,10 +52,17 @@ body {
     display: flex;
     align-items: flex-start;
     gap: 30px;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 70px;
     left: 70px;
     height: 600px;
+    width: calc(100% - 140px);
+    border-radius: 6px;
+    overflow-x: scroll;
+}
+
+.container::-webkit-scrollbar {
+    width: 2;
+    height: 2;
 }
 
 .trello-box {
@@ -87,6 +92,10 @@ body {
     font-weight: bold;
 }
 
+input {
+    height: 100%;
+}
+
 .delete-icon {
     display: flex;
     align-items: center;
@@ -112,8 +121,7 @@ body {
     align-items: center;
     gap: 10px;
     height: 40px;
-    padding: 8px;
-    /* border-top: 1px solid #ccc; */
+    padding: 10px;
     transition: background-color 0.2s;
     cursor: pointer;
 }
@@ -127,16 +135,22 @@ body {
     background-color: #fff;
     box-shadow: 0 0 2px 0 #ccc;
     border-radius: 8px;
+    padding-right: 10px;
     cursor: pointer;
-    padding: 10px;
     min-height: 40px;
     max-height: 80px;
 }
 
 .task-box .content {
-    max-width: 100%;
+    width: 100%;
+    padding: 10px 0 10px 10px;
     overflow-y: scroll;
     word-wrap: break-word;
+}
+
+.task-box .content::-webkit-scrollbar,
+.tasks::-webkit-scrollbar {
+    width: 0;
 }
 
 .delete {
@@ -162,7 +176,7 @@ body {
     min-height: 40px;
     background-color: #ffffff40;
     color: #333;
-    width: 300px;
+    min-width: 300px;
     border-radius: 12px;
     gap: 10px;
     display: flex;
@@ -193,4 +207,5 @@ body {
     color: #000;
     width: 100%;
     cursor: text;
+    padding: 10px;
 }
