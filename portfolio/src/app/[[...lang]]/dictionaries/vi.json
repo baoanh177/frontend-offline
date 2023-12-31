@@ -1,0 +1,23 @@
+{
+    "home": {
+        "fullName": "Đỗ Bá Bảo Anh",
+        "mySkills": "Các kỹ năng của tôi",
+        "webSkills": "Kĩ năng web",
+        "otherSkills": "Các kĩ năng khác",
+        "otherSkillsContent": "Kỹ năng nghiên cứu và tìm kiếm tương đối tốt. Tư duy làm việc, kỹ năng làm việc nhóm tốt so với độ tuổi.",
+        "histories": "Lịch sử",
+        "xmHS": "Học tại trường THPT Xuân Mai",
+        "fptCollege": "Học tại trường Cao đẳng FPT Polytechnic",
+        "contactInfo": "Thông tin liên hệ",
+        "personalProject": "Các dự án cá nhân",
+        "project_1_Content_1": "Một dự án nhỏ làm trong ngày.",
+        "project_1_Content_2": "Một trang landing page đơn giản sử dụng HTML5 & CSS3.",
+        "project_2_Content_1": "Một dự án nhỏ làm trong 2 ngày",
+        "project_2_Content_2": "Một trang web quản lí todo sử dụng ReactJS.",
+        "project_3_Content_1": "Một dự án nhỏ làm trong 1 tuần",
+        "project_3_Content_2": "Một trang web quản lí công việc sử dụng ReactJS kết hợp với thư viện DnD Kit.",
+        "myHobbies": "Sở thích cá nhân",
+        "myHobbiesContent1": "Nghe nhạc, chơi game, các bộ môn thể thao như cầu lông, bida,...",
+        "myHobbiesContent2": "Học Hỏi Thêm Về Các Ngôn Ngữ Lập Trình Mới Mẻ."
+    }
+}

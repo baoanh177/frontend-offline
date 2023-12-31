@@ -1,0 +1,23 @@
+{
+    "home": {
+        "fullName": "Do Ba Bao Anh",
+        "mySkills": "My skills",
+        "webSkills": "Web skills",
+        "otherSkills": "Other skills",
+        "otherSkillsContent": "Relatively good research and search skills. Working thinking, good teamwork skills compared to age.",
+        "histories": "My histories",
+        "xmHS": "Studied at Xuan Mai High School",
+        "fptCollege": "Studying at FPT Polytechnic College",
+        "contactInfo": "Social contacts",
+        "personalProject": "My projects",
+        "project_1_Content_1": "A small project completed in one day.",
+        "project_1_Content_2": "A simple landing page using HTML5 & CSS3.",
+        "project_2_Content_1": "A small project done in 2 days",
+        "project_2_Content_2": "A todo management website using ReactJS.",
+        "project_3_Content_1": "A small project completed in a week",
+        "project_3_Content_2": "A job management website using ReactJS combined with the DnD kit library.",
+        "myHobbies": "My hobbies",
+        "myHobbiesContent1": "Listen to music, play games, sports like badminton, billiards,...",
+        "myHobbiesContent2": "Learn More About New Programming Languages."
+    }
+}
