@@ -3,11 +3,11 @@ import Image from "next/image";
 import icons from "~/assets/icons/icons";
 import ThemeSwitcher from "./ThemeSwitcher";
 import LanguageSwitcher from "./LanguageSwitcher";
-import { getDictionary } from "../dictionaries/dictionaries";
+import { getDictionary } from "./dictionaries/dictionaries";
 
-async function DefaultLayout({ params, children }) {
+async function RootLayout({ params, children }) {
     const { lang } = params
-    const dict = await getDictionary(lang[0])
+    const dict = await getDictionary(lang)
 
     return <>
         <div className="max-w-[1200px] mx-auto px-5">
@@ -55,4 +55,4 @@ async function DefaultLayout({ params, children }) {
     </>
 }
 
-export default DefaultLayout;
+export default RootLayout;

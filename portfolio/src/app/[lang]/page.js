@@ -1,11 +1,11 @@
 import Image from "next/image";
 import icons from "~/assets/icons/icons";
-import { getDictionary } from "../dictionaries/dictionaries";
-
+import { getDictionary } from "./dictionaries/dictionaries";
 
 async function HomePage({ params }) {
     const { lang } = params
-    const dict = await getDictionary(lang[0])
+    const dict = await getDictionary(lang)
+
 
     return <div className="shadow-lg px-4 pt-7 pb-12 rounded-lg">
         <div className="p-3">
