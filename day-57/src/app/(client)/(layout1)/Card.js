@@ -1,4 +1,10 @@
-function Card({ name, price }) {
+"use client"
+import Button from "~/app/components/Button";
+import { useRouter } from "next/navigation";
+
+function Card({ name, price, id }) {
+    const router = useRouter()
+
     return <>
         <div className="border-2 p-5">
             <div className="h-52 border-2"></div>
@@ -9,7 +15,7 @@ function Card({ name, price }) {
                 <span className="text-xl">{price}</span>
                 <span className="line-through">50.000.000</span>
             </div>
-            <button className="h-10 w-40 border-2 mt-5 transition hover:bg-white hover:cursor-pointer hover:text-black">Đặt ngay</button>
+            <Button click={() => router.push('/detail/' + id)}>Đặt ngay</Button>
         </div>
     </>
 }

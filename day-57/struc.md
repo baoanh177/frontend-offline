@@ -1,0 +1,16 @@
+--src
+    --app
+        --(client)
+            --(layout1)
+                --library
+                    --page.js
+                --layout.js
+                --page.js
+            --(layout2)
+                --detail
+                    --page.js
+                --pay
+                    --page.js
+                --layout.js
+        --layout.js
+    --middleware.js
