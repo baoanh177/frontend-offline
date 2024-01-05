@@ -27,19 +27,19 @@ function DetailLayout({ children }) {
                             <Link href="/" className={pathname == "/"? 'text-green-500' : ''}>Trang chủ</Link>
                         </li>
                         <li>
-                            <Link href="/book" className={pathname == "/book"? 'text-green-500' : ''}>Đặt lịch</Link>
+                            <Link href="/about" className={pathname == "/about"? 'text-green-500' : ''}>About</Link>
                         </li>
                         <li>
-                            <Link href="/uudai" className={pathname == "/uudai"? 'text-green-500' : ''}>Ưu Đãi</Link>
+                            <Link href="/diemden" className={pathname == "/diemden"? 'text-green-500' : ''}>Điểm đến</Link>
                         </li>
                         <li>
                             <Link href="/services" className={pathname == "/services"? 'text-green-500' : ''}>Dịch Vụ</Link>
                         </li>
                         <li>
-                            <Link href="/danhgia" className={pathname == "/danhgia"? 'text-green-500' : ''}>Đánh Giá</Link>
+                            <Link href="/images" className={pathname == "/images"? 'text-green-500' : ''}>Ảnh</Link>
                         </li>
                         <li>
-                            <Link href="/contact" className={pathname == "/contact"? 'text-green-500' : ''}>Liên Hệ</Link>
+                            <Link href="/blogs" className={pathname == "/blogs"? 'text-green-500' : ''}>Blogs</Link>
                         </li>
                     </ul>
                 </nav>

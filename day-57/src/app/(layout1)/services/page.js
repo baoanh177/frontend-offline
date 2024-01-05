@@ -1,5 +1,5 @@
 import { servicesData } from "~/servicesData"
-import Card from "./Card"
+import Card from "../Card"
 
 function Services() {
     return (
@@ -11,7 +11,7 @@ function Services() {
                 Dịch vụ
             </h2>
             <div className="grid grid-cols-4 gap-4 mt-14">
-                {servicesData.map(service => <Card {...service}/>)}
+                {servicesData.map(service => <Card key={service.id} {...service}/>)}
             </div>
         </div>
     )
