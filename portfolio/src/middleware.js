@@ -11,7 +11,7 @@ const middleware = request => {
 }
 
 export const config = {
-    matcher: ["/", "/(vi||en):path*"]
+    matcher: ["/"]
 }
 
 export default middleware

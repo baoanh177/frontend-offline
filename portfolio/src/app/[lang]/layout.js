@@ -24,16 +24,16 @@ async function RootLayout({ params, children }) {
                                     <Link href="/">Home</Link>
                                 </li>
                                 <li>
-                                    <Link href="/">Blogs</Link>
+                                    <Link href="/blogs">Blogs</Link>
                                 </li>
                                 <li>
-                                    <Link href="/">Contact</Link>
+                                    <Link href="/contact">Contact</Link>
                                 </li>
                             </ul>
                         </nav>
                     </div>
                     <div className="flex items-center gap-3 [&>a>img]:w-6 [&>a>img]:h-6 [&>*]:hover:cursor-pointer">
-                        <a href="https://fullstack.edu.vn/@anhbao7">
+                        <a href="">
                             <Image src={icons.f8} alt="" className="rounded-md"/>
                         </a>
                         <a href="https://www.facebook.com/profile.php?id=100088917412737">
@@ -42,9 +42,9 @@ async function RootLayout({ params, children }) {
                         <a href="https://github.com/Baoanh2004">
                             <Image src={icons.github} alt=""/>
                         </a>
-                        <a href="">
+                        <Link href={lang + "/profile"}>
                             <Image src={icons.user} alt=""/>
-                        </a>
+                        </Link>
                         <ThemeSwitcher/>
                         <LanguageSwitcher lang={lang}/>
                     </div>

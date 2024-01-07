@@ -12,12 +12,15 @@
     "@formatjs/intl-localematcher": "^0.5.2",
     "negotiator": "^0.6.3",
     "next": "14.0.4",
+    "next-auth": "^4.24.5",
     "next-themes": "^0.2.1",
     "react": "^18",
     "react-dom": "^18",
     "react-i18next": "^14.0.0"
   },
   "devDependencies": {
+    "@types/node": "20.10.6",
+    "@types/react": "18.2.47",
     "autoprefixer": "^10.4.16",
     "eslint": "^8",
     "eslint-config-next": "14.0.4",

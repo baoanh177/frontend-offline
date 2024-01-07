@@ -7,10 +7,17 @@ function LanguageSwitcher({ lang }) {
     const pathname = usePathname()
     
     useEffect(() => {
+        console.log(123)
         const savedLang = document.cookie || ''
         const langName = savedLang.split('=')[1] 
         if(langName && langName == 'en' || langName == 'vi') {
-            router.push(langName)
+            const nextPath = pathname.split('/').map(e => {
+                if(e == 'en' || e == 'vi') {
+                    return langName
+                }
+                return e
+            }).join('/')
+            router.push(nextPath)
         }else {
             document.cookie = `lang=${lang}`
         }
