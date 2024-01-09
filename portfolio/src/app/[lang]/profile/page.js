@@ -1,14 +1,17 @@
 "use client"
-import { signOut, useSession } from "next-auth/react";
+import { signOut, useSession,  } from "next-auth/react";
 import { redirect } from "next/navigation";
 
 function ProfilePage() {
     const { data: session } = useSession()
 
+    // console.log(session)
     if(!session) {
+        console.log('redirect')
         redirect('/vi/auth')
     }
 
+    const isGoogleAccount = session?.user?.image.startsWith('https://lh3.googleusercontent.com')
     const isGithubAccount = session?.user?.image.startsWith('https://avatars.githubusercontent.com')
 
     return <div className="flex flex-col gap-5 py-5">
@@ -25,7 +28,9 @@ function ProfilePage() {
                 <div className="w-1/2 h-full bg-green-500 flex items-center justify-center">
                     {isGithubAccount ? session?.user?.name : 'Github'}
                 </div>
-                <div className="w-1/2 h-full bg-blue-500 flex items-center justify-center">Google</div>
+                <div className="w-1/2 h-full bg-blue-500 flex items-center justify-center">
+                    {isGoogleAccount ? session?.user?.name : 'Google'}
+                </div>
             </div>
             <div className="w-60 h-10 rounded-xl flex hover:cursor-pointer">
                 <div 

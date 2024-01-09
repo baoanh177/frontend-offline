@@ -6,22 +6,21 @@ function LanguageSwitcher({ lang }) {
     const router = useRouter()
     const pathname = usePathname()
     
-    useEffect(() => {
-        console.log(123)
-        const savedLang = document.cookie || ''
-        const langName = savedLang.split('=')[1] 
-        if(langName && langName == 'en' || langName == 'vi') {
-            const nextPath = pathname.split('/').map(e => {
-                if(e == 'en' || e == 'vi') {
-                    return langName
-                }
-                return e
-            }).join('/')
-            router.push(nextPath)
-        }else {
-            document.cookie = `lang=${lang}`
-        }
-    }, [])
+    // useEffect(() => {
+    //     const savedLang = document.cookie || ''
+    //     const langName = savedLang.split('=')[1] 
+    //     if(langName && langName == 'en' || langName == 'vi') {
+    //         const nextPath = pathname.split('/').map(e => {
+    //             if(e == 'en' || e == 'vi') {
+    //                 return langName
+    //             }
+    //             return e
+    //         }).join('/')
+    //         router.push(nextPath)
+    //     }else {
+    //         document.cookie = `lang=${lang}`
+    //     }
+    // }, [])
 
     const handleSwitchLang = () => {
         const nextLang = lang == 'en' ? 'vi' : 'en'
