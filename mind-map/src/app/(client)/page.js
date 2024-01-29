@@ -12,7 +12,7 @@ function Home() {
                     organize, and map out their ideas in a structured way.
                 </p>
                 <Link href="/" className="bg-green-600 text-white py-3 px-5 rounded-lg text-[17px] cursor-pointer">
-                    Dùng thử miễn phí
+                    Try it for free
                 </Link>
             </div>
             <div className="grow flex justify-center">

@@ -1,0 +1,128 @@
+{
+  "users": [
+    {
+      "id": "google-oauth2|103830982682161665865",
+      "name": "Bảo Anh Đỗ",
+      "picture": "https://lh3.googleusercontent.com/a/ACg8ocIhlDRYR7ycGMeVsLjBRYWyk6Z_Z5KrVDpm4Auq74XMVQ=s96-c",
+      "email": "baoanh27042004@gmail.com"
+    }
+  ],
+  "data": [
+    {
+      "id": "google-oauth2|103830982682161665865",
+      "flows": [
+        {
+          "id": "786b21ba-7854-47f7-bc44-07f4e38271ad",
+          "title": "Test local",
+          "isPublic": true,
+          "description": "Không có mô tả",
+          "created_at": "2024-01-26T08:54:45.027Z",
+          "share_data": {
+            "title": "Test local",
+            "description": "Không có mô tả",
+            "shared_image": "https://brandshark.com/wp-content/uploads/2023/02/9DEEF7F5-C215-43B9-BEBD-C8856AF52E30-1080x675.jpeg"
+          },
+          "data": {
+            "nodes": [
+              {
+                "id": "0",
+                "position": {
+                  "x": 21.5,
+                  "y": -88
+                },
+                "data": {
+                  "label": "Mindmap Flow"
+                },
+                "type": "input",
+                "deletable": false,
+                "width": 150,
+                "height": 40,
+                "selected": false,
+                "positionAbsolute": {
+                  "x": 21.5,
+                  "y": -88
+                },
+                "dragging": false
+              },
+              {
+                "id": "1",
+                "position": {
+                  "x": -112.5,
+                  "y": 37
+                },
+                "type": "",
+                "data": {
+                  "label": "Node 1"
+                },
+                "width": 150,
+                "height": 40,
+                "selected": false,
+                "dragging": false,
+                "positionAbsolute": {
+                  "x": -112.5,
+                  "y": 37
+                }
+              },
+              {
+                "id": "2",
+                "position": {
+                  "x": 123,
+                  "y": 49.5
+                },
+                "type": "",
+                "data": {
+                  "label": "Node 2"
+                },
+                "width": 150,
+                "height": 40,
+                "selected": true,
+                "positionAbsolute": {
+                  "x": 123,
+                  "y": 49.5
+                },
+                "dragging": false
+              },
+              {
+                "id": "3",
+                "position": {
+                  "x": -18.25,
+                  "y": 100.75
+                },
+                "type": "",
+                "data": {
+                  "label": "Node 3"
+                },
+                "width": 150,
+                "height": 40,
+                "selected": false,
+                "positionAbsolute": {
+                  "x": -18.25,
+                  "y": 100.75
+                },
+                "dragging": false
+              }
+            ],
+            "edges": [
+              {
+                "id": "f0-1",
+                "source": "0",
+                "target": "1"
+              },
+              {
+                "id": "f0-2",
+                "source": "0",
+                "target": "2"
+              },
+              {
+                "id": "f0-3",
+                "source": "0",
+                "target": "3"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "flows": []
+}

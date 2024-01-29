@@ -18,19 +18,19 @@ function Header({children}) {
                         "
                     >
                         <li>
-                            <Link href="/" className={pathname == '/' ? 'active' : ''}>Trang chủ</Link>
+                            <Link href="/" className={pathname == '/' ? 'active' : ''}>Home</Link>
                         </li>
                         <li>
-                            <Link href="/about" className={pathname == '/about' ? 'active' : ''}>Giới thiệu</Link>
+                            <Link href="/about" className={pathname == '/about' ? 'active' : ''}>About</Link>
                         </li>
                         <li>
-                            <Link href="/features" className={pathname == '/features' ? 'active' : ''}>Tính năng</Link>
+                            <Link href="/features" className={pathname == '/features' ? 'active' : ''}>Features</Link>
                         </li>
                         <li>
-                            <Link href="/prices" className={pathname == '/prices' ? 'active' : ''}>Bảng giá</Link>
+                            <Link href="/prices" className={pathname == '/prices' ? 'active' : ''}>Prices</Link>
                         </li>
                         <li>
-                            <Link href="/contact" className={pathname == '/contact' ? 'active' : ''}>Liên hệ</Link>
+                            <Link href="/contact" className={pathname == '/contact' ? 'active' : ''}>Contact</Link>
                         </li>
                     </ul>
                 </nav>
